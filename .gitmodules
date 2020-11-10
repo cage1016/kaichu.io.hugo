@@ -1,4 +1,4 @@
 [submodule "themes/zozo"]
-	path = themes/zozo
-	url = git@github.com:cage1016/hugo-theme-zozo.git
-	branch = style/post
+path = themes/zozo
+url = https://github.com/cage1016/hugo-theme-zozo.git
+branch = style/post
