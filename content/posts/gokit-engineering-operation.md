@@ -33,7 +33,7 @@ Test 部份依照 `Service`, `Transport` 分別進行相對應的 unitest，採�
 
 Toolchain 則強調，架構強制分離配合程式碼產生器可以加快開發的速度
 
-### 補統資料
+### 補充資料
 
 [Cloud Native Buildpacks · Cloud Native Buildpacks](https://buildpacks.io/) 是 CNCF 下面的一個專案，簡單來說就是透過 container 的方式來幫你從原始碼打包 container image 而不需要編寫 Dockerfile, Google 也在今年的 Cloud Next 20' OnAir 上宣佈 `Cloud Build`, `Cloud Run`, `Cloud Shell`, `Cloud Function`, `Cloud Code` & `Skafflold` 都已經原生支援 [GoogleCloudPlatform/buildpacks](https://github.com/GoogleCloudPlatform/buildpacks)
 
