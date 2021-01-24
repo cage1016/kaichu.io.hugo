@@ -10,9 +10,8 @@ enableEmoji = true
 googleAnalytics = "UA-65308340-1"                   # your google analytics id
 disqusShortname = "kaichuio"                   # your discuss shortname
 
-pygmentsUseClasses = true
-pygmentCodeFences = true
-pygmentscodefencesguesssyntax = true
+pygmentsUseClasses = false
+PygmentsCodeFences = false
 
 [author]                               # essential                     # 必需
   name = "KaiChu"
