@@ -78,7 +78,7 @@ Evernote-web-clipper 及 Clearly 都可以正常的讀到內容。
 
 ### Contribute
 
-```sh
+```shell
 # Clone repo from github
 $ git clone https://github.com/cage1016/life.com-text-copy
 

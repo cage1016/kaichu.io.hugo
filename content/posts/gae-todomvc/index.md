@@ -30,7 +30,7 @@ tags:
 
 GAE todomvc 的 gcloud SDK 為 `0.9.64`
 
-```sh
+```shell
 # Get gcloud
 $ curl https://sdk.cloud.google.com | bash
 
@@ -53,7 +53,7 @@ $ bower install
 
 GAE todomvc 中 `Vue.js` 範例中使用到了 `vue-resource` library，因為 `vue-resource` 模組預設沒有 `update: {method: 'put'}` method，所以在執行 `gulp` 時，需自己稍作修改。
 
-```sh
+```shell
 # switch to bower_components
 $ cd bower_components
 

@@ -187,7 +187,7 @@ class GCSIterator(object):
 
 ## Getting Started
 
-```sh
+```shell
 # Get gcloud
 $ curl https://sdk.cloud.google.com | bash
 
@@ -227,7 +227,7 @@ for row in reader:
 
 Execute `main.py`
 
-```sh
+```shell
 # sample output
 $ python main.py
 read bytes=0-512/*

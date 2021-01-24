@@ -42,7 +42,7 @@ tags:
 
 # Setting Started
 
-```sh
+```shell
 # clone webpack-es6 repo
 $ git clone https://github.com/cage1016/webpack-es6-demo
 

@@ -49,7 +49,7 @@ date: 2020-06-20 12:13:48
 1. 共 30 秒
 1. 音頻漸入漸出效果: fadein 3 秒， fadeout 3 秒
 
-```sh
+```shell
 $ docker run --rm -it -v $(PWD)/output:/app/output -e FADEIN=3 -e FADEOUT=3 -e VID=Pkh8UtuejGw -e SS=00:00:22 -e T=30 cage1016/ios-ringtone-maker-yt:latest
 YoutTubeID: Pkh8UtuejGw
 StartTime: 00:00:22
@@ -147,7 +147,7 @@ video:0kB audio:472kB subtitle:0kB other streams:0kB global headers:0kB muxing o
 
 鈴聲直接輸出在執行 docker 路徑下 `./output` 
 
-```sh
+```shell
 $ ls ./output/
 Pkh8UtuejGw.m4r
 ```

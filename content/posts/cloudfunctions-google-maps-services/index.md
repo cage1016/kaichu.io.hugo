@@ -13,7 +13,7 @@ date: 2017-08-18 00:42:29
 
 [Waldo-gcp](https://www.slideshare.net/cagechung/waldogcp) 在 2015 時 Google I/O Extended Taipei 時分享過一個計算最佳路徑的微服務。在提供幾組 Google Maps 上有效的地址，透過 Google Maps Distance Matrix API 來計算出每一個點一點之間的旅行距離及旅行時間。再透過基因演算出計算出周遊一圈旅行最短路徑
 
-```sh
+```shell
 # 提供5組 Google Maps 上有效的地址
 
 台北市內湖區瑞光路227號1樓,
@@ -25,7 +25,7 @@ date: 2017-08-18 00:42:29
 
 <!--more-->
 
-```sh
+```shell
 # 透過 Google Maps Distance Matrix API 計算出  origin, destination, distance, duration
 
 台北市內湖區瑞光路227號1樓, 高雄市鼓山區美術東二路106號, 352777, 13532
@@ -54,7 +54,7 @@ Cloud functions 可以建立 `Background Funtions`, `HTTP Functions` + `HTTP Tri
 
 Github repo: [cage1016/cloudfunctions-google-maps-services](https://github.com/cage1016/cloudfunctions-google-maps-services)
 
-```sh
+```shell
 # clone repo
 $ git git@github.com:cage1016/cloudfunctions-google-maps-services.git && cd cloudfunctions-google-maps-services
 
@@ -78,7 +78,7 @@ const googleMapsClient = require('@google/maps').createClient({
 
 修改完依序執行即可
 
-```sh
+```shell
 # deploy distanceMatrix
 $ make deploy_backend
 
@@ -98,7 +98,7 @@ $ make describe_backend
 
 修改完依序執行即可
 
-```sh
+```shell
 # deploy distanceMatrixHttp
 $ make deploy_http
 

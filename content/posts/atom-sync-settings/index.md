@@ -16,12 +16,12 @@ date: 2016-09-20 22:58:40
 當你好不容易打造好自己熟悉的開發環境時，如果要換電腦時，重新還原熟悉的開發環境是需要花一點功夫。以下是手動的方式
 
 備份機上的清單到一個檔案
-```sh
+```shell
 $ apm list --installed --bare | grep '^[^@]\+' -o > my_atom_packages.txt
 ```
 
 在另外一台機器上使用 `apm` 進行批次安裝的動作
-```sh
+```shell
 $ apm install --packages-file my_atom_packages.txt
 ```
 
@@ -65,7 +65,7 @@ $ apm install --packages-file my_atom_packages.txt
 
 最後分享一下我的 Atom 擴充工具清單
 
-```sh
+```shell
 Sublime-Style-Column-Selection
 atom-alignment
 atom-beautify

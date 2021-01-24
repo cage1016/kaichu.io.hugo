@@ -13,7 +13,7 @@ tags:
 
 <!--more-->
 
-```sh
+```shell
 $ appcfg.py update default/app.yaml ownership/app.yaml
 10:46 AM Host: appengine.google.com
 10:46 AM Application: <your-application-id>; version: 1
@@ -30,7 +30,7 @@ You do not have permission to modify this app (app_id=u's~<your-application-id>'
 
 檢查 `gcloud config`
 
-```sh
+```shell
 $ gcloud config list
 Your active configuration is: [default]
 
@@ -51,7 +51,7 @@ project = <your-default-project-id>
 
 1. `--no_cookies` Do not save authentication cookies to local disk.
 2. 直接刪除 `.appcfg_cookies` & `.appcfg_oauth2_tokens` 並重新進行 `gcloud oauth login`
-  ```sh
+  ```shell
   $ la | grep .appcfg_
   -rw-------     1 cage  staff        960 Jul  8  2015 .appcfg_cookies
   -rw-r--r--     1 cage  staff         43 Nov 15 13:01 .appcfg_nag

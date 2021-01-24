@@ -37,7 +37,7 @@ Toolchain 則強調，架構強制分離配合程式碼產生器可以加快開�
 
 [Cloud Native Buildpacks · Cloud Native Buildpacks](https://buildpacks.io/) 是 CNCF 下面的一個專案，簡單來說就是透過 container 的方式來幫你從原始碼打包 container image 而不需要編寫 Dockerfile, Google 也在今年的 Cloud Next 20' OnAir 上宣佈 `Cloud Build`, `Cloud Run`, `Cloud Shell`, `Cloud Function`, `Cloud Code` & `Skafflold` 都已經原生支援 [GoogleCloudPlatform/buildpacks](https://github.com/GoogleCloudPlatform/buildpacks)
 
-```sh
+```shell
 Suggested builders:
 	Google:                gcr.io/buildpacks/builder:v1      Ubuntu 18 base image with buildpacks for .NET, Go, Java, Node.js, and Python
 	Heroku:                heroku/buildpacks:18              heroku-18 base image with buildpacks for Ruby, Java, Node.js, Python, Golang, & PHP

@@ -33,7 +33,7 @@ total 752
 
 考慮效能的問題, 最後打算使用 golang 來當作 host server, golang 內建的 `net/http` 可以輕鬆的使用 `http.FileServer(http.Dir("./"))` 來 host 整個靜態目錄
 
-```golang
+```go
 package main
 
 import (
@@ -57,7 +57,7 @@ http://localhost:3000/dfa
 
 所以我們使用了 golang `echo` 的 web framework, 監聽所有的請求並直接導至 `index.html` 的前端靜態檔案
 
-```golang
+```go
 package main
 
 import (

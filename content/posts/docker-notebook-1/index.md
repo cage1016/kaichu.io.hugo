@@ -19,7 +19,7 @@ picture: https://viget.com/extend/how-to-use-docker-on-os-x-the-missing-guide
 
 XD
 
-```sh
+```shell
 WARNING: The 'boot2docker' command line interface is officially deprecated.
 
 Please switch to Docker Machine (https://docs.docker.com/machine/) ASAP.
@@ -36,7 +36,7 @@ docker 社群開發的速度非常的快速，而 docker 1.8 之後就有了比�
 安裝完了 Docker Toolbox 之後，可以直接在 `Launchpad` 上尋找 `Docker Quickstart Terminal`，執行之後終端機會進行 VirtualBox 初始化，
 並建立 default 的虛擬機(在 1.7 版時則是利用 `boot2docker` 來建立虛擬機，並會在 VirtualBox 中建立一個名為 `boot2docker-vm` 的虛擬機)。
 
-```sh
+```shell
 $ bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'
 Machine default already exists in VirtualBox.
 Starting machine default...
@@ -60,7 +60,7 @@ For help getting started, check out the docs at https://docs.docker.com
 
 接著利用 `docker-machine` 來查詢目前那些 Docker host
 
-```sh
+```shell
 $ docker-machine ls
 NAME      ACTIVE   DRIVER       STATE     URL                         SWARM
 default   *        virtualbox   Running   tcp://192.168.99.100:2376
@@ -71,7 +71,7 @@ dev                virtualbox   Stopped
 
 接下來利用簡單的步驟來試範在 Docker 上跑一個 Nginx 並透過設定對外開放 port 讓外部可以直接存取到 Nginx 的頁面
 
-```sh
+```shell
 # 確認 docker-machine env 狀態 (我們以預設的 Docker host - default)
 $ docker-machine env default
 
@@ -122,7 +122,7 @@ Commercial support is available at
 
 ## Tips:
 
-```sh
+```shell
 $ docker info
 Get http:///var/run/docker.sock/v1.20/info: dial unix /var/run/docker.sock: no such file or directory.
 * Are you trying to connect to a TLS-enabled daemon without TLS?
@@ -131,7 +131,7 @@ Get http:///var/run/docker.sock/v1.20/info: dial unix /var/run/docker.sock: no s
 
 如果遇到這個問題，只有重置一下 `docker-machine` 即可，Docker 還很貼心的告訴你如何重置 shell `eval "$(docker-machine env default)"`
 
-```sh
+```shell
 $ docker-machine env default
 export DOCKER_TLS_VERIFY="1"
 export DOCKER_HOST="tcp://192.168.99.100:2376"

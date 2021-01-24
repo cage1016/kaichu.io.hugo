@@ -23,7 +23,7 @@ tags:
 > 第一種方式是將 Hugo 靜態網站佈署到 Github Page `Project Site` 面頁中. 只需要在 github 上建立一個 repo，但是利用 git 中 `subtree` 的概念將 `public` 資料夾連結到 `gh-pages` 的分支上，git 操作過程較為繁鎖
 
 Url 上的差異
-```sh
+```shell
 # project site url
 http://github.com/<your-github-account>/<hugo-project-name>
 
@@ -36,7 +36,7 @@ http://<your-github-account>.github.io
 #### Step1 - 安裝 Hugo 並建立新專案
 在[安裝](https://github.com/spf13/hugo/releases)(詳細步驟請看這)好 Hugo 後，直接建立新的 Hugo 專案
 
-```sh
+```shell
 # 建立 Hugo 新專案，-f 是指定 yaml 格式，預設為 toml:frontmatter format
 $ hugo new site hugo_blog -f yaml
 
@@ -53,7 +53,7 @@ $ git remote add origin git@github.com:<your-github-account>/hugo_blog.git
 
 檢視新專案資料架構
 
-```sh
+```shell
 # <project-name> file structure
 ├── archetypes
 ├── config.toml
@@ -72,7 +72,7 @@ $ git remote add origin git@github.com:<your-github-account>/hugo_blog.git
 >If you have any questions you can contact us by replying to this email.
 
 所以這邊直接使用 git `submodule` 的方式來安裝 themes
-```sh
+```shell
 # add hugo themes to project as submodule
 # git submodule add <repository> [<path>]
 $ git submodule add https://github.com/spf13/hyde themes/hyde
@@ -93,7 +93,7 @@ theme : 'hyde'
 #### Step4 - 新增新的文章
 在 `content/posts` 建立 `first-post.md`
 
-```sh
+```shell
 # 會在專案 content/posts 下產生 first-post.md 檔案
 # -f 使用 yaml 檔案格式
 $ hugo new posts/first-post.md -f yaml
@@ -113,7 +113,7 @@ This is my first post.
 #### Step5 - 預覽
 此時就可以在 Local 執行， [http://127.0.0.1:1313/hugo_blog/](http://127.0.0.1:1313/hugo_blog/)
 
-```sh
+```shell
 # -w watch filesystem for changes and recreate as needed
 # -D include content marked as draft
 # Press Ctrl+C to stop
@@ -126,7 +126,7 @@ $ hugo server -w
 
 接下來的動作是一連串的 git 操作，把 Hugo 產生的 `public` 資料夾推送至 Github Pages
 
-```sh
+```shell
 # remove, public folder will created later
 $ rm -rf public
 
@@ -179,7 +179,7 @@ $ git subtree push --prefix=public git@github.com:<your-github-account>/hugo_blo
 
 之後如果有任何修改，只有執行最後的3個步驟即可或是將最後的步驟寫成 `deploy.sh`
 
-```sh
+```shell
 # deploy.sh
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
@@ -217,7 +217,7 @@ Github Pages 除了提供專案主頁(可以多個)之外，也提供了個人�
 
 #### Step2 - 建立 Hugo 新專案
 
-```sh
+```shell
 $ hugo new site <github-project>-hugo -f yaml
 
 # change directory
@@ -233,13 +233,13 @@ $ git remote add origin git@github.com:<your-github-account>/<github-project>-hu
 
 #### Step3 - 安裝 Themes
 
-```sh
+```shell
 $ git submodule add https://github.com/spf13/hyde themes/hyde
 ```
 
 #### Step4 - 編輯專案設定檔
 
-```sh
+```shell
 baseurl: 'http://<your-github-account>.github.com/'
 languageCode: 'en-us'
 title: 'My New Hugo Site'
@@ -250,7 +250,7 @@ theme: 'hyde'
 
 #### Step5 - 新增文章
 
-```sh
+```shell
 $ hugo new posts/first-post.md -f yaml
 ```
 
@@ -266,7 +266,7 @@ This is my first hugo post
 #### Step6 - 預覽
 此時就可以在 Local 執行， [http://127.0.0.1:1313/hugo_blog/](http://127.0.0.1:1313/hugo_blog/)
 
-```sh
+```shell
 # -w watch filesystem for changes and recreate as needed
 # -D include content marked as draft
 # Press Ctrl+C to stop
@@ -275,20 +275,20 @@ $ hugo server -w
 
 #### Step7 - 移除 public
 
-```sh
+```shell
 # it will created by `hugo` command after we executed `deploy.sh`
 $ rm -rf public
 ```
 
 ## Step8 - 新增 <your-github-account>.github.io public as submodule
 
-```sh
+```shell
 $ git submodule add git@github.com:<your-github-account>/<your-github-account>.github.io.git public
 ```
 
 #### Step8 - 發佈
 
-```sh
+```shell
 #deploy.sh
 #!/bin/bash
 
@@ -318,7 +318,7 @@ cd ..
 
 執行發佈shell後，內容會被推送到 `<your-github-account>-hugo`，而 `public` 會被推送到 `<your-github-account>.github.io`
 
-```sh
+```shell
 $ deploy.sh 'your commit message'
 ```
 

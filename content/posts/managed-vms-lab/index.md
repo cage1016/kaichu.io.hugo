@@ -92,7 +92,7 @@ Docker 則是一個新興的 container 技術，讓發開者可以更快速的�
 
 _golang, app.yaml_
 
-```sh
+```shell
 # make sure to replace "projectid" below with the project ID configured in the Google Developer Console
 runtime: go
 api_version: go1
@@ -127,7 +127,7 @@ _Demo Architecture_
 
 _dispatch.yaml_
 
-```sh
+```yaml
 dispatch:
   - url: "*/favicon.ico"
     module: default
@@ -148,7 +148,7 @@ dispatch:
 
 _golang, file structure (same as python)_
 
-```sh
+```shell
 ├── create_ab_test_instances.sh     # ab test instances create shell
 ├── default                         # default module
 │   ├── app.yaml                    # default moduel app.yaml
@@ -166,7 +166,7 @@ _golang, file structure (same as python)_
 
 > 本次 Demo 使用 Google Cloud SDK 0.9.79
 
-```sh
+```shell
 # install Google cloud SDK
 $ curl https://sdk.cloud.google.com | bash
 
@@ -183,7 +183,7 @@ $ git clone https://github.com/cage1016/managed-vms-lab
   - \*/default/`update_all.sh.exist` --> \*/defalt/`update_all.sh`
   - \*default/`create_ab_test_instances.sh.exist` --> \*/default/`create_ab_test_instances.sh`
 
-```sh
+```shell
 # run locally
 $ cd golang (or cd python)
 
@@ -211,7 +211,7 @@ $ sh local_run.sh
 
 在 module1 的 Managed VMs 中有設定 automatic scaling, 且在 cpu > **0.2** 下會自動進行 scaling
 
-```sh
+```shell
 # cd folder
 $ cd golang (or cd python)
 

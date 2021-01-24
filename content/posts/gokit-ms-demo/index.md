@@ -28,7 +28,7 @@ date: 2020-11-03 17:50:10
 
 1. Run `skaffold run` (first time will be slow)
 2. Set the `ADD_HTTP_LB_URL/ADD_GRPC_LB_URL` & `TICTAC_HTTP_LB_URL/TICTAC_GRPC_LB_URL` environment variable in your shell to the public IP/port of the Kubernetes loadBalancer
-    ```sh
+    ```shell
     export ADD_HTTP_LB_PORT=$(kubectl get service add-external -o jsonpath='{.spec.ports[?(@.name=="http")].port}')
     export ADD_GRPC_LB_PORT=$(kubectl get service add-external -o jsonpath='{.spec.ports[?(@.name=="grpc")].port}')
     export ADD_LB_HOST=$(kubectl get service add-external -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
@@ -47,7 +47,7 @@ date: 2020-11-03 17:50:10
     ```
 3. Access by command
     - sum method
-    ```sh
+    ```shell
     curl -X POST $ADD_HTTP_LB_URL/sum -d '{"a": 1, "b":1}'
     
     or
@@ -55,7 +55,7 @@ date: 2020-11-03 17:50:10
     grpcurl -d '{"a": 1, "b":1}' -plaintext -proto ./pb/add/add.proto $ADD_GRPC_LB_URL pb.Add.Sum
     ```
     - tic method
-    ```sh
+    ```shell
     curl -X POST $TICTAC_HTTP_LB_URL/tic
     
     or
@@ -63,7 +63,7 @@ date: 2020-11-03 17:50:10
     grpcurl -plaintext -proto ./pb/tictac/tictac.proto $TICTAC_GRPC_LB_URL pb.Tictac.Tic
     ```
     - tac method
-    ```sh
+    ```shell
     curl $TICTAC_HTTP_LB_URL/tac
     
     or
@@ -72,7 +72,7 @@ date: 2020-11-03 17:50:10
     ```
 4. Apply istio manifests `kubectl apply -f deployments/istio-manifests`
 5. Set the `GATEWAY_HTTP_URL/GATEWAY_GRPC_URL` environment variable in your shell to the public IP/port of the Istio Ingress gateway.
-    ```sh
+    ```shell
     export INGRESS_HTTP_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}')
     export INGRESS_GRPC_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].port}')
     export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
@@ -83,7 +83,7 @@ date: 2020-11-03 17:50:10
     ```
 7. Access by command
     - sum method
-    ```sh
+    ```shell
     curl -X POST $GATEWAY_HTTP_URL/api/v1/add/sum -d '{"a": 1, "b":1}'
     
     or
@@ -91,7 +91,7 @@ date: 2020-11-03 17:50:10
     grpcurl -d '{"a": 1, "b":1}' -plaintext -proto ./pb/add/add.proto $GATEWAY_GRPC_URL pb.Add.Sum
     ```
     - tic method
-    ```sh
+    ```shell
     curl -X POST $GATEWAY_HTTP_URL/api/v1/tictac/tic
     
     or
@@ -99,7 +99,7 @@ date: 2020-11-03 17:50:10
     grpcurl -plaintext -proto ./pb/tictac/tictac.proto $GATEWAY_GRPC_URL pb.Tictac.Tic
     ```
     - tac method
-    ```sh
+    ```shell
     curl $GATEWAY_HTTP_URL/api/v1/tictac/tac
     
     or

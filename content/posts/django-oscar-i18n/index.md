@@ -16,7 +16,7 @@ tags:
 
 目前 django-oscar 支援的 i18n
 
-```sh
+```shell
 ├── am_ET
 ├── ar
 ├── ar_SA
@@ -124,25 +124,25 @@ USE_TZ = True
 
 切換至工作目錄
 
-```sh
+```shell
 (env) cd {project_path}/sandbox
 ```
 
 建立 `i18n` 及 `locale` 目錄
 
-```sh
+```shell
 (env) mkdir i18n locale
 ```
 
 link virtualenv django-oscar source
 
-```sh
+```shell
 (env) ln -s ~/.virtualenvs/{your-ven-name}/lib/python2.7/site-packages/oscar i18n/oscar
 ```
 
 使用 `makemessage` 建立 `zh_TW` locale 檔
 
-```sh
+```shell
 # django-oscar locale: sandbox/i18n/oscar/locale
 # project locale: sandbox/locale
 (env) python manage.py makemessages --symlinks --locale=zh_TW
@@ -150,6 +150,6 @@ link virtualenv django-oscar source
 
 編譯 messages
 
-```sh
+```shell
 (env) python manage.py compilemessages
 ```

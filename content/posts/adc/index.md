@@ -42,14 +42,14 @@ Create Service Account
 5.	Click **Create Client ID**
 6.	**P12.Key** file will be downloaded. You have to convert `p12` to `pem` cause PKCS12 format is not supported by the PyCrypto library.
 
-	```sh
+	```shell
 	(openssl pkcs12 -in xxxxx.p12 -nodes -nocerts > privatekey.pem)
 	```
 
 在本地測試程式時還需將 `--appidentity_email_address` 及 `--appidentity_private_key_path` 帶到 `dev_appserver.py` 參數中。
 如果沒有帶入這二個參數本地測試會得到 `401 Unauthorized` 的錯誤訊息，不過上傳到 GAE 因為會透過應用程式本身的認証所以不會出錯。
 
-```sh
+```shell
 # gae run locally.
 dev_appserver.py yaml_or_war_path --appidentity_email_address=<service-account-email> --appidentity_private_key_path=<privatekey.pem-path>
 ```

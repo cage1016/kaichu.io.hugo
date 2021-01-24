@@ -30,7 +30,7 @@ Python 社群擁有非常多的好用的套件，所以 `pip` 的套件管理程
 - 不同專案可以使用不同版本的相同套件
 - 套件版本升級時不會影響其他專案
 
-```sh
+```shell
 # install virtualenv (會安裝在全域環境下)
 $ pip install virtualenv
 
@@ -61,7 +61,7 @@ Virtualenv 方便讓我隔離了不同專案下的函式庫，但是我們建立
 
 所以剛剛的操作步驟就可以得到簡化
 
-```sh
+```shell
 # 列出所有的 virtualenv. 所有的 virtualenv 集中管理(~/.virtualenvs/)
 $ workon
 djago-oscar-api-test
@@ -90,7 +90,7 @@ virtualenvwrapper.user_scripts creating /Users/cage/.virtualenvs/env_QGS/bin/get
 
 > Django是一個開放原始碼的Web應用框架，由Python寫成。採用了MVC的軟體設計模式，即模型M，視圖V和控制器C。它最初是被開發來用於管理勞倫斯出版集團旗下的一些以新聞內容為主的網站的。並於2005年7月在BSD授權條款下釋出。這套框架是以比利時的吉普賽爵士吉他手Django Reinhardt來命名的。[Django - 維基百科，自由的百科全書](https://zh.wikipedia.org/wiki/Django)
 
-```sh
+```shell
 # 使用 mkvirtualenv env_QGS, 列出預設安裝 Python 函式庫
 (env_QGS) $ pip list
 pip (7.1.2)
@@ -177,7 +177,7 @@ Available subcommands:
 
 twocoops 是一本書，這本書教你如何最佳實踐 Django 1.8，如上一節提的問題(multiple requirements.txt、settings)等配置方式
 
-```sh
+```shell
 # 我們接著上節的進度 (~/tmp/quick_gettting_started)
 (env_QGS) $ ls
 my_site # 剛剛建立的 my_site 專案
@@ -252,7 +252,7 @@ $ tree
     - `local.py`
         1. mark **line 15** `# TEMPLATE_DEBUG = DEBUG`
 
-```sh
+```shell
 # install package
 (env_QGS) $ cd mysite2
 (env_QGS) $ pip install -r requirements/local.txt
