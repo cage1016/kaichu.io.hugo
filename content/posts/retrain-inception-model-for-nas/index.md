@@ -32,7 +32,7 @@ date: 2016-08-22 17:30:55
 
 ## slide
 
-{% pdf http://www.slideshare.net/slideshow/embed_code/key/zieUigbiN3ArMn %}
+{{< slideshare id="65206227" >}}
 
 ## github demo repo
 

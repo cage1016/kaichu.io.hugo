@@ -16,7 +16,7 @@ date: 2017-09-09 00:23:00
 
 > [cage1016/screenshot-as-a-service-demo: GCPUG Taiwan Meetup #29: screenshot as a service demo code](https://github.com/cage1016/screenshot-as-a-service-demo)
 
-{% pdf https://www.slideshare.net/slideshow/embed_code/key/o68LfhCpXHlFqz %}
+{{< slideshare id="79563683" >}}
 
 <!--more-->
 
