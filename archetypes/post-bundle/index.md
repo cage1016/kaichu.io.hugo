@@ -16,5 +16,10 @@ google slide
 slideshare
 {{< slideshare id="2" >}}
 
+
+{{< video src="my-beautiful-screencast" >}}
+or
+{{< video src="my-beautiful-screencast" width="600px" >}}
+
 read more
 <!--more-->
