@@ -122,6 +122,9 @@ docker build -t gcr.io/retailbase-dev/ext-run:v1 -f run.Dockerfile .
 pack build gcr.io/retailbase-dev/retailbase-organizationsvc:$SHORT_SHA --builder gcr.io/buildpacks/builder:v1 --env GOOGLE_BUILDABLE=cmd/organizationsvc/main.go --run-image gcr.io/retailbase-dev/ext-run:v1
 ```
 
+#### 2021/04/08 update 
+在發 issue [Include tzdata in base images · GoogleCloudPlatform/buildpacks@50539bf](https://github.com/GoogleCloudPlatform/buildpacks/commit/50539bf027fcb907e72f65e50e3ce3904b8821fb) 之後，Google 已經在 base image 中加上了 `tzdata`，這樣就不需要擴充 runtime 來解 Golang panic 的 bug，直接使用原來的 `gcr.io/buildpacks/builder:v1` 即可
+
 #### 坑三 gcr.io/cloud-builders/gcloud
 
 > cloudbuild gcr.io/cloud-builders/gcloud 中有整合 pack 的參數，不過沒有辦法追加 runtime 的設定，就算我們擴充了 run time 也無法代入
