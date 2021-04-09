@@ -165,6 +165,19 @@ gcr.io/cloud-builders/gcloud 使用 pack 的相關參數只有 builder, env, 及
 ```
 
 如何自定義 buildpack 就寫在另一篇文章
+#### 2021/04/09 update
+
+跟據 [GoogleCloudPlatform/buildpacks](https://github.com/GoogleCloudPlatform/buildpacks#using-with-google-cloud-build) 的說明，skaffold team 有提供 `gcr.io/k8s-skaffold/pack` pack 的 instance 可以直接使用，也就是說不需要自行編譯 community buildpack pack 的方式
+
+```yaml
+steps:
+- name: gcr.io/k8s-skaffold/pack
+  entrypoint: pack
+  args:
+    - build
+    - --builder=gcr.io/buildpacks/builder
+    - --publish=gcr.io/$PROJECT_ID/sample-go:$COMMIT_SHA
+```
 
 ### Reference
 - [Cloud Native Buildpacks](https://buildpacks.io/): Buildpack 官方網站
