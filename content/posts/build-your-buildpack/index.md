@@ -357,3 +357,11 @@ Buildpacks:
   ID                     VERSION        HOMEPAGE
   cage1016/jq-cnb        1.1.0          https://github.com/cage1016/jq-cnb
 ```
+
+## Reference
+- [github-actions/README.md at main · buildpacks/github-actions](https://github.com/buildpacks/github-actions/blob/main/README.md#request-add-entry-action): End-user GitHub Actions related to Cloud Native Buildpacks
+- [GoogleCloudPlatform/buildpacks: Builders and buildpacks designed to run on Google Cloud's container platforms](https://github.com/GoogleCloudPlatform/buildpacks): Builders and buildpacks designed to run on Google Cloud's container platforms
+- [Cloud Native Buildpacks · Cloud Native Buildpacks](https://buildpacks.io/) 
+- [Paketo Buildpacks - Paketo Buildpacks](https://paketo.io/)
+- [cage1016/jq-cnb: A Cloud Native Buildpack that include jq](https://github.com/cage1016/jq-cnb)
+- [Buildpack Registry](https://registry.buildpacks.io/)
