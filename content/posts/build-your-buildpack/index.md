@@ -208,7 +208,11 @@ alpine `Dockerfile`
 
 稍早有提過，編寫一個 builpack 最少需要有 3 個檔案，`buildpack.toml`, `bin/detect`, `bin/build`
 
-{{< gist cage1016 74c6ac365b73e73a1a68e0ff9a2a8df1 >}}
+{{< gist cage1016 74c6ac365b73e73a1a68e0ff9a2a8df1 "buildpack.toml" >}}
+
+{{< gist cage1016 74c6ac365b73e73a1a68e0ff9a2a8df1 "detect" >}}
+
+{{< gist cage1016 74c6ac365b73e73a1a68e0ff9a2a8df1 "build" >}}
 
 ```bash
 ├── jq-cnb
