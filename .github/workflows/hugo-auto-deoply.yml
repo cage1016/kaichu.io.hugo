@@ -45,6 +45,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add . -A
-          git commit -m "[chore] Auto publish"
-          git push origin
+          if [[ $(git diff --stat) != '' ]]; then
+            git add . -A
+            git commit -m "[chore] Auto publish"
+            git push origin
+          fi
