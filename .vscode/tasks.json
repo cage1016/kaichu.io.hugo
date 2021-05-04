@@ -23,6 +23,30 @@
                 "isDefault": true
             },
             "problemMatcher": []
-        }
-    ]
+        },
+        {
+            "label": "New Post",
+            "type": "shell",
+            "command": "hugo",
+            "args": [
+                "new",
+                "--kind",
+                "post-bundle",
+                "posts/${input:newPostTitle}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+        },
+    ],
+    "inputs": [
+        {
+            "id": "newPostTitle",
+            "type": "promptString",
+            "description": "Name your post title.",
+            "default": "my-new-post-title"
+        },
+    ],
 }
