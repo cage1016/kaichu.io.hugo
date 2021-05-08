@@ -42,7 +42,7 @@ cron:
 
 - [GitHub GraphQL API](https://docs.github.com/en/graphql/overview/explorer): Github Graphql Playground
 
-  {{<img src="/posts/github-script-repos-sync/img/2.png">}}
+  {{<img src="/posts/github-script-repos-sync/img/3.png">}}
 
 - [nektos/act: Run your GitHub Actions locally 🚀](https://github.com/nektos/act): 不得不提這一個工具，可以在本地端開發測試 Github Action，本地就可以開發就是方便
 
