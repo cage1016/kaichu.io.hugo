@@ -17,7 +17,7 @@ Github Markdown
 
 <!--more-->
 
-在 2018 年時為了公用帳號有一個 Github repostiories & collaborators 列表的需求，還特別在 GAE 上用 Golang 寫了一個服數並啟用 cron job
+在 2018 年時為了公用帳號有一個 Github repostiories & collaborators 列表的需求，還特別在 GAE 上用 Golang 寫了一個服務並啟用 cron job
 
 _cron.yaml_
 
