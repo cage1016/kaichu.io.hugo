@@ -2,8 +2,9 @@ name: Auto publish to public site
 
 on:
   push:
-    branches: 
-    - master
+    branches:
+      - master
+     workflow_dispatch: # Run workflow manually (without waiting for the cron to be called), through the Github Actions Workflow page directly
 
 jobs:
   hugo-publish:
@@ -21,8 +22,8 @@ jobs:
       - name: checkout public repo
         uses: actions/checkout@v2
         with:
-          path: public 
-          repository: cage1016/cage1016.github.io    
+          path: public
+          repository: cage1016/cage1016.github.io
           token: ${{ secrets.HUGO_GITHUB_PAT }}
 
       - name: setup hugo
@@ -39,6 +40,12 @@ jobs:
       - name: build content to public site
         working-directory: ./
         run: hugo --minify --gc
+
+      - uses: darrenjennings/algolia-docsearch-action@master
+        with:
+          algolia_application_id: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+          algolia_api_key: ${{ secrets.ALGOLIA_API_KEY }}
+          file: 'index.json'
 
       - name: deploy and publish updates
         working-directory: ./public
