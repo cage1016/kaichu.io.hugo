@@ -41,11 +41,12 @@ jobs:
         working-directory: ./
         run: hugo --minify --gc
 
-      - uses: darrenjennings/algolia-docsearch-action@master
+      - uses: rxrw/algolia-index-uploader@v1
         with:
-          algolia_application_id: ${{ secrets.ALGOLIA_APPLICATION_ID }}
-          algolia_api_key: ${{ secrets.ALGOLIA_API_KEY }}
-          file: 'index.json'
+          index_path: 'public/index.json'
+          algolia_index_id: ${{ secrets.ALGOLIA_APPLICATION_ID }}
+          algolia_index_name: index
+          algolia_index_admin_key: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
 
       - name: deploy and publish updates
         working-directory: ./public
