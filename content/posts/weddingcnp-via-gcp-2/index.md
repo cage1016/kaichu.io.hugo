@@ -7,10 +7,15 @@ tags:
   - EndpointAPI
   - sendgrid
   - API
-desc: weddingcnp frontend Service 使用了 GAE standard runtime 搭配 echo 網頁框架實作
-type: post
+description: weddingcnp frontend Service 使用了 GAE standard runtime 搭配 echo 網頁框架實作
+draft: false
 date: 2017-06-18 21:02:54
+resources:
+- name: "featured-image-preview"
+  src: "img/weddingcnp-via-gpc-2_1.png"
 ---
+
+<!--more-->
 
 此篇就對 [Cage & Ping wedding](http://weddingcnp.appspot.com/) frontend Service 使用了 GAE standard runtime 搭配 echo 網頁框架實作介紹
 
@@ -36,7 +41,7 @@ date: 2017-06-18 21:02:54
   - [隱藏網頁](https://weddingcnp.appspot.com/greeting)(求婚影片搶先看)，連結由喜帖中的 QR code 提供
   - [bingo 遊戲](https://weddingcnp.appspot.com/bingo)
 
-{{<img src="/posts/weddingcnp-via-gcp-2/weddingcnp-via-gpc-2_1.png">}}
+{{<image src="img/weddingcnp-via-gpc-2_1.png">}}
 
 **frontend Service**
 
@@ -64,7 +69,6 @@ date: 2017-06-18 21:02:54
 ├── index.yaml            // index for Datastore
 └── main.go               // echo framework entry point
 ```
-<!-- more -->
 
 ## Google App Engine Basic
 
@@ -247,7 +251,7 @@ func init() {
 
 透過 `app-engine.go`、`app-standalone.go`、`app.go`、`main.go` 的調整，就可以在 Google App Engine **Standard** runtime 上使用 `echo` 框架(不過僅限 Go 1.6)。在頁面 Render 的部份則是使用 `github.com/unrolled/render` 模版系統來建置。相簿的照片是放在 Google Cloud Storage 透過 Image API 來取存[^2]，大至上都是很單純的頁面
 
-{{<img src="/posts/weddingcnp-via-gcp-2/weddingcnp-via-gpc-2_2.png">}}
+{{<image src="img/weddingcnp-via-gpc-2_2.png">}}
 
 此篇大至上說明 [Cage & Ping wedding](http://weddingcnp.appspot.com/) **frontend Service(Module)** 實作的方式。比較可惜的是目前 `Go` 主要的版本已經到 1.8.3, 1.9 Beta 也公佈了，而 Google App Engine **Standard** runtime 只有支援 `Go` 1.6 (1.8 應該快要支援), 當 Google App Engine **Standard** runtime 支援 `Go` 1.8 時才會有比較多的框架來搭配，目前就使用容易性來說還是 **Flexible** runtime 較好
 

@@ -6,16 +6,19 @@ tags:
     - 2018
     - GDG
     - summit
-type: post
+draft: false
 date: 2018-08-20 10:53:15
-desc: 參加 Global GDG Leaders Summit 2018 and Google I/O 2018 心得分享
+description: 參加 Global GDG Leaders Summit 2018 and Google I/O 2018 心得分享
+resources:
+- name: "featured-image-preview"
+  src: "img/gdg summit 2018 agenda.jpg"
 ---
+
+<!--more-->
 
 補作業
 
 {{< gslides src="https://docs.google.com/presentation/d/e/2PACX-1vQvBqMYvYRhwQBqcnr-gn__cwyvmsBInyHAANba7loo4NIsm_3W00-XkEK4-n5Vd0HgQ1P2RJcFIEeL/embed?start=false&loop=false&delayms=3000" >}}
-
-<!--more-->
 
 說了好久想去 Google I/O 終於在今年達成。第一次自費參加 Google I/O 之外，也以 [GCPUG.TW](http://GCPUG.TW) organizer 的身份參加了一前一天的 Global GDG Leaders Summit 2018[^1]
 
@@ -32,7 +35,7 @@ desc: 參加 Global GDG Leaders Summit 2018 and Google I/O 2018 心得分享
 - Event Management 
 - Misc.
 
-{{<img src="/posts/gdg-summit-2018-and-google-io-2018/gdg summit 2018 agenda.jpg">}}[^2]
+{{<image src="img/gdg summit 2018 agenda.jpg">}}[^2]
 
 除了聽聽 Session 之外，最重要的部份就屬認識來自全球的其他 GDG 朋友 (加拿大、中國、香港、日本、澳洲、紐西蘭 etcs)。第三天晚上也參加了 Northeast Asia and Oceania Community Summit[^3]
 
@@ -54,7 +57,7 @@ desc: 參加 Global GDG Leaders Summit 2018 and Google I/O 2018 心得分享
 
 Sandbox 只有現在才看的到，所以這種活動有時間還是要走完比較值得。影片都會有錄影，所以回來還是有機會可以看的。Google I/O Social 還是需要的啦，認識新朋友是一件很棒的事
 
-{{<img src="/posts/gdg-summit-2018-and-google-io-2018/google io 2018 keynote.jpg">}}
+{{<image src="img/google io 2018 keynote.jpg">}}
 
 # Reference
 [^1]:  [Global GDG Leaders Summit - Home](https://events.withgoogle.com/gdg-global-summit/)

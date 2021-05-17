@@ -2,16 +2,19 @@
 date: {{ .Date }}
 title: "{{ replace .Name "-" " " | title }}"
 draft: true
-desc: TODO
+description: TODO
 tags:
-  - TODO 
+  - TODO
+resources:
+  - name: "featured-image-preview"
+    src: "img/placeholder.png"  
 ---
 
-image
-{{<img src="/posts/{{ .Name }}/img/placeholder.png">}}
-
-read more
 <!--more-->
+
+image
+{{<image src="/posts/{{ .Name }}/img/placeholder.png">}}
+
 
 google slide
 {{< gslides src="https://docs.google.com/presentation/d/e/2PACX-1vQvBqMYvYRhwQBqcnr-gn__cwyvmsBInyHAANba7loo4NIsm_3W00-XkEK4-n5Vd0HgQ1P2RJcFIEeL/embed?start=false&loop=false&delayms=3000" >}}

@@ -7,10 +7,15 @@ tags:
   - EndpointAPI
   - sendgrid
   - API
-type: post
+draft: false
 date: 2017-06-12 22:14:22
-desc: weddingcnp 使用 dispatch.yaml 來進行專案架構上的切分，利用 makefile 來加速部署的流程、速度
+description: weddingcnp 使用 dispatch.yaml 來進行專案架構上的切分，利用 makefile 來加速部署的流程、速度
+resources:
+- name: "featured-image-preview"
+  src: "img/weddingcnp-via-gcp-1_2.png"
 ---
+
+<!--more-->
 
 此篇就對 [Cage & Ping wedding](http://weddingcnp.appspot.com/) 中實作的專案架構進行簡單的說明，每一個 Google App Engine Service 實作的細節會在後序的篇幅中介紹
 
@@ -66,8 +71,6 @@ __project structure__
 └── makefile                // cli helper makefile
 ```
 
-<!-- more -->
-
 整個專案的檔案架構如上，可以分為 `endpoints`、`frontend`、`ownership` 三個 Service(Module), 而 Google App Engine 可以非常有彈性的透過 Service[^1] 的方式針對不同的任務給予不同資源[^2]，而 [Cage & Ping wedding](http://weddingcnp.appspot.com/) 基本上使用預計的部份就足夠了，不需特別指派
 
 __dispatch.yaml__
@@ -92,11 +95,11 @@ dispatch:
 
 上述的 `dispatch.yaml` 可以幫我們重導流量至我們設定的 Service(Module)，不過在部署的部份則是需要一個一個 Service(Module)來進行部署，部署完之後會在 Google App Engine Services 中看到所有的 Services
 
-{{<img src="/posts/weddingcnp-via-gcp-1/weddingcnp-via-gcp-1_1.png">}}
+{{<image src="img/weddingcnp-via-gcp-1_1.png">}}
 
 再則我們可以透過 version[^3] 的方式來管理部署的 Service
 
-{{<img src="/posts/weddingcnp-via-gcp-1/weddingcnp-via-gcp-1_2.png">}}
+{{<image src="img/weddingcnp-via-gcp-1_2.png">}}
 
 當 Google App Engine Service 切分的越細，雖然可以任務的資源給予更細的調整，不過卻也造成部署上的複雜度，因此可以透過 `mikefile` 來加速部署的流程與速度
 

@@ -4,6 +4,9 @@ title: Life.com text copy
 tags:
   - chrome
   - extension
+resources:
+- name: "featured-image-preview"
+  src: "img/life-dom-copy-text-1.png"  
 ---
 
 Facebook 許多人都有轉載一些文章，看到有些不錯的文章，會想保存到 Evernote 上，Evernote 提供了 [Evernote Web Clipper - Chrome Web Store](https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc) 及 [Clearly - Chrome Web Store](https://chrome.google.com/webstore/detail/clearly/iooicodkiihhpojmmeghjclgihfjdjhj) 可以方便使用直接把面頁的文章快速的存到自己的 Notebook 中。
@@ -69,9 +72,9 @@ jQuery('iframe[src="about:blank"]')[0].contentDocument.onselectstart = function(
 #### 結果
 Evernote-web-clipper 及 Clearly 都可以正常的讀到內容。
 
-{{<img src="/posts/life-dot-com-text-copy/life-dom-copy-text-1.png">}}
+{{<image src="img/life-dom-copy-text-1.png">}}
 
-{{<img src="/posts/life-dot-com-text-copy/life-dom-copy-text-2.png">}}
+{{<image src="img/life-dom-copy-text-2.png">}}
 
 ### Installing
 [life.com text copy - Chrome Web Store](https://chrome.google.com/webstore/detail/lifecom-text-copy/oelpalillkokjbeojomcpkafgoelilbk?hl=en&gl=TW)

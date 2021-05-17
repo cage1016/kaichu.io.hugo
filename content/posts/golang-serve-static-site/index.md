@@ -3,18 +3,20 @@ title: golang serving a single page application
 tags:
   - golang
   - webpack
-desc: docker run small container with SPA serving by golang
+description: docker run small container with SPA serving by golang
 date: 2016-08-04 10:22:03
+resources:
+- name: "featured-image-preview"
+  src: "img/golang-serve-static-site-flow.jpg"
 ---
 
+<!--more-->
 
 ## golang serve SPA
 
 最近有前端開發的需求，選用了 [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit) 來進行二次開發，省去一些想要使用 React, redux, redux-router 的基本配置，這樣速度會快一點
 
 因為 `react-redux-starter-kit` 也使用 webpack 進行程式碼的打包, 所以最後的產出預設在 `dist` 資料夾中，所以部署時只需要一個簡單的 host server 即可
-
-<!--- more -->
 
 ```bash
 # dist example
@@ -53,7 +55,7 @@ func main() {
 http://localhost:3000/dfa
 ```
 
-{{<img src="/posts/golang-serve-static-site/golang-serve-static-site-404-golang.png">}}
+{{<image src="img/golang-serve-static-site-404-golang.png">}}
 
 所以我們使用了 golang `echo` 的 web framework, 監聽所有的請求並直接導至 `index.html` 的前端靜態檔案
 
@@ -124,13 +126,13 @@ func main() {
 http://localhost:3000/dfa
 ```
 
-{{<img src="/posts/golang-serve-static-site/golang-serve-static-site-404.jpg">}}
+{{<image src="img/golang-serve-static-site-404.jpg">}}
 
 ## run SPA as with docker image
 
 處理完 golang 對 single page application 的支援, 進一步簡化部署的流程, 可以將整個 single page application 連同 `app.go` 利用 golang build 的方式編譯成執行檔, 再將 golang 執行檔透過 `Dockerfile` 編譯成 docker image, 這樣一來就可以很容易的部署在任何可以執行 container 的環境
 
-{{<img src="/posts/golang-serve-static-site/golang-serve-static-site-flow.jpg">}}
+{{<image src="img/golang-serve-static-site-flow.jpg">}}
 
 上述一系列的流程我們可以使用 `npm run scripts` 的方式把它完全串起來來達到一鍵建立 docker image
 

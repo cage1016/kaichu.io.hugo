@@ -2,13 +2,18 @@
 date: 2021-03-22T13:22:27+08:00
 title: "Cloud Run Button Tips"
 draft: false
-desc: Buildpack 讓發開人員免去了寫 Dockerfile 的痛苦，在使用 Cloud Run Button 中可以透過 project.toml 的配置來設定 buildpack 執行時期的參數，在 go code 進入點不在根目錄中的程式可以配置 GOOGLE_BUILDABLE 來指定程式進入點，必免導至 Container image 建立失敗
+description: Buildpack 讓發開人員免去了寫 Dockerfile 的痛苦，在使用 Cloud Run Button 中可以透過 project.toml 的配置來設定 buildpack 執行時期的參數，在 go code 進入點不在根目錄中的程式可以配置 GOOGLE_BUILDABLE 來指定程式進入點，必免導至 Container image 建立失敗
 tags:
   - GCP
   - CloudRun
+resources:
+- name: "featured-image-preview"
+  src: "img/1.png"  
 ---
 
-# Cloud Run
+<!--more-->
+
+## Cloud Run
 
 最近為了節省 GCP 服務上的花費，將 GKE 的 cluster 的機器等級調低，相對應的是遷出部份服務到 Google managed 中，也因此重新將目光投射回 `Cloud Run`
 
@@ -16,9 +21,7 @@ Cloud Run 是算是 Goolge Cloud Platfrom 中 serverless (以 Knative 標準打�
 
 {{< youtube gx8VTa1c8DA >}}
 
-<!--more-->
-
-### Container images
+## Container images
 
 剛剛提到開發人員只需要掌握 Container Image 打包的技能就可以入門 Cloud Run。而打包 Container Image 的方式可以從編寫 `Dockerfile` 或使用 CNCF 中 [Cloud Native Buildpacks](https://buildpacks.io/) 的方式從原始碼打包 Container image。
 
@@ -34,7 +37,7 @@ Cloud Run 是算是 Goolge Cloud Platfrom 中 serverless (以 Knative 標準打�
 
 最大的好處是不需要編寫 `Dockerfile`，Container 相關的安全漏洞也會幫你處理好，更詳細的部份可以參考 [GoogleCloudPlatform/buildpacks: Builders and buildpacks designed to run on Google Cloud's container platforms](https://github.com/GoogleCloudPlatform/buildpacks)
 
-# Cloud Run Button
+## Cloud Run Button
 
 > Let anyone deploy your GitHub repos to Google Cloud Run with a single click
 
@@ -52,15 +55,15 @@ name = "GOOGLE_BUILDABLE"
 value = "cmd/add/main.go"
 ```
 
-# Cloud Code - Cloud Run
+### Cloud Code - Cloud Run
 
 [Cloud Code - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode)
 
 另外 Cloud Code 也有支援 Cloud Run 的整合，Cloud Run Button 是在 Cloud shell 透過 git clone 的方式來獲取原始碼，對於私人專案可能沒有那麼適合，就可以選擇 Cloud Code - Cloud Run，Cloud Code - Cloud Run 一樣有整合 buildpack，同樣適配 `project.toml` 設定參數
 
-{{<img src="/posts/cloud-run-button-tips/img/1.png">}}
+{{<image src="img/1.png" src_l="img/1.png">}}
 
-# Demo 
+### Demo 
 
 [![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run?git_repo=https://github.com/cage1016/gokit-add-cloud-run)
 

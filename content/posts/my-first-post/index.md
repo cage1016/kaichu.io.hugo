@@ -1,10 +1,16 @@
 ---
 date: '2015-07-12T08:41:06+08:00'
-title: '在 Github Pages 建立 Hugo 靜態網站'
+title: '如在 Github Pages 建立 Hugo 靜態網站'
+description: 如在 Github Pages 建立 Hugo 靜態網站
 tags:
   - hugo
   - github
+resources:
+- name: "featured-image-preview"
+  src: "img/first-post-screenshot.jpg"
 ---
+
+<!--more-->
 
 ### 原由
 颱風天那都不能去，只好繼續 Coding 人生、看看 Pocket 未讀的文章。不過也因此發現好幾個不錯的東西
@@ -14,7 +20,6 @@ tags:
 
 在 Ulric Quin 的文章中得知他自己的 Blog 是架在大陸的[GitCafe](https://gitcafe.com/)，Hugo 可以直接發佈到 GitCafe & Github 的 Page **免費**，當然是立刻自己動手玩一玩
 
-<!--more-->
 
 在 [Hosting on GitHub Pages](http://gohugo.io/tutorials/github-pages-blog/#configure-git-workflow-the-alternate-way:fcefb200141ace3e7bfd6542457b7a72) 的說明文件中有如何把 Hugo 靜態網站佈署到 Github Pages 中。但因為 [GitHub Pages](https://pages.github.com/) 提供了二種不同形態的頁面 `User or organization site` & `Project Site`。其中個人主頁一個帳號只能有**一個**、而專案頁面則可以**很多個**。
 
@@ -120,7 +125,7 @@ This is my first post.
 $ hugo server -w
 ```
 應該可以看到下面擷圖的樣式
-{{<img src="/posts/my-first-post/first-post-screenshot.jpg">}}
+{{<image src="img/first-post-screenshot.jpg">}}
 
 #### Step6 - 發佈 Hugo 靜態網站至 Github Pages
 

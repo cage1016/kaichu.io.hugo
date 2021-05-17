@@ -1,21 +1,24 @@
 ---
 date: 2015-10-04T21:51:59+08:00
 title: '[筆記] docker 1.8.2 rc'
-desc: 'docker 社群開發的速度非常的快速，而 docker 1.8 又有比較大的改變。boot2docker 的功能被 docker-machine 取代，此篇文章算是自己作一個記錄'
+description: 'docker 社群開發的速度非常的快速，而 docker 1.8 又有比較大的改變。boot2docker 的功能被 docker-machine 取代，此篇文章算是自己作一個記錄'
 tags:
   - docker
   - docker-machine
   - boot2docker
   - nginx
+resources:
+- name: "featured-image-preview"
+  src: "img/docker_on_linux_macosx.jpg"  
 ---
+
+<!--more-->
 
 在 Mac os x 開發 docker，因為 Mac 無法原生支援 Docker，所以在 docker 1.7 以前的版上就必需透過 `boot2docker`，`boot2docker`
 會在本機的 VirtualBox 上安裝一個虛擬機。Docker client 機乎是接近原生的狀態跑在 Mac 上，只不過 Docker 的 server 是跑在 `boot2docker` 的虛擬機中.
 
-{{<img src="/posts/docker-notebook-1/docker_on_linux_macosx.jpg">}}
+{{<image src="img/docker_on_linux_macosx.jpg">}}
 picture: https://viget.com/extend/how-to-use-docker-on-os-x-the-missing-guide
-
-<!--more-->
 
 XD
 
@@ -27,7 +30,7 @@ Please switch to Docker Machine (https://docs.docker.com/machine/) ASAP.
 Docker Toolbox (https://docker.com/toolbox) is the recommended install method.
 ```
 
-{{<img src="/posts/docker-notebook-1/mac-page-two.png">}}
+{{<image src="img/mac-page-two.png">}}
 picture: https://docs.docker.com/installation/mac/#installation
 
 docker 社群開發的速度非常的快速，而 docker 1.8 之後就有了比較大的變化。安裝的工具也發生了變化，
@@ -120,7 +123,7 @@ Commercial support is available at
 </html>
 ```
 
-## Tips:
+## Tips
 
 ```shell
 $ docker info

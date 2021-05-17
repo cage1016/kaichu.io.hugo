@@ -5,10 +5,15 @@ tags:
   - Golang
   - echo
   - pongor
-desc: Simple example to demo how to serve GCS image via GAE Image API
-type: post
+description: Simple example to demo how to serve GCS image via GAE Image API
+draft: false
 date: 2016-10-31 21:55:10
+resources:
+- name: "featured-image-preview"
+  src: "gae-go-image-api.png"
 ---
+
+<!--more-->
 
 > [LIVE DEMO](https://go-gae-image-api-example-dot-gae-lab-001.appspot.com/)
 
@@ -16,7 +21,6 @@ date: 2016-10-31 21:55:10
 
 專案檔案太大會影響 GAE 在自動擴展的效能，所以盡可能的將不必要的東西移多專案外(圖檔等)
 
-<!--more-->
 
 _app.yaml_
 
@@ -168,7 +172,7 @@ func init() {
 ```
 
 ### GAE Go Image serve GCS image
-{{<img src="/posts/gae-go-image-api/gae-go-image-api.png">}}
+{{<image src="gae-go-image-api.png">}}
 
 ### demo code
 

@@ -2,20 +2,24 @@
 date: 2021-04-20T21:54:06+08:00
 title: "Github Assets Cnb"
 draft: false
-desc: 在構建 container image 時，有時候會有需求動態下載 Github repo 中的 Assets 檔案，簡單的方式就是在 `dockerfile` 透過 `curl` 指令來獲取檔案，本篇文章則透過 paketo-buildpacks/packit 來實作一個可以下載 Github Assets 的 buildpack cage1016/github-assets-cnb
+description: 在構建 container image 時，有時候會有需求動態下載 Github repo 中的 Assets 檔案，簡單的方式就是在 `dockerfile` 透過 `curl` 指令來獲取檔案，本篇文章則透過 paketo-buildpacks/packit 來實作一個可以下載 Github Assets 的 buildpack cage1016/github-assets-cnb
 tags:
-  - buildpack 
-  - gcp 
-  - pack 
+  - buildpack
+  - gcp
+  - pack
   - github
-  - paketo 
+  - paketo
+
+resources:
+- name: "featured-image-preview"
+  src: "img/1.png"
 ---
 
-{{<img src="/posts/github-assets-cnb/img/1.png">}}
+<!--more-->
+
+![Github Asset Cnb](img/1.png "Github Asset Cnb")
 
 在構建 container image 時，有時候會有需求動態下載 Github repo 中的 Assets 檔案，簡單的方式就是在 `dockerfile` 透過 `curl` 指令來獲取檔案，如果是 private repo 時另外配置 `TOKEN` 即可
-
-<!--more-->
 
 __dockerfile__
 
@@ -63,7 +67,7 @@ RUN ASSET_ID=$(if [ $VERSION != "latest" ]; then \
     ```bash
     cat <<EOF >> sample-app/project.toml
     # [[build.env]]
-    # optional, github token for private assets 
+    # optional, github token for private assets
     # name = "TOKEN"
     # value = "<github-token>"
 
@@ -101,6 +105,6 @@ RUN ASSET_ID=$(if [ $VERSION != "latest" ]; then \
 
 1. demo
 
-    {{<img src="/posts/github-assets-cnb/img/demo.gif">}}
+    ![Demo](img/demo.gif "Demo")
 
 1. 詳細實作的細節請至 [cage1016/github-assets-cnb](https://github.com/cage1016/github-assets-cnb) 查閱

@@ -2,26 +2,25 @@
 date: 2021-01-24T13:03:50+08:00
 title: "Rbac1 Design"
 draft: false
-desc: 權限系統在任何應用程式都是基礎且重要的部份，主要是對不同的人訪問資源進行權限的控制，本篇文章並沒有特別的再說明 Role-Based Access Control, 解釋的文章已經太多了，隨便 Google 都是一堆。最期在公司的專案也是有採用 RBAC 來管控系統的權限，一般的 RBAC0 (最基本的 User - Role - Permission) 的模型大至上可以符合需求，不過在權限配直的時候會有一點重工，所以選擇了有角色繼承的 RBAC1 來進行實作
+description: 權限系統在任何應用程式都是基礎且重要的部份，主要是對不同的人訪問資源進行權限的控制，本篇文章並沒有特別的再說明 Role-Based Access Control, 解釋的文章已經太多了，隨便 Google 都是一堆。最期在公司的專案也是有採用 RBAC 來管控系統的權限，一般的 RBAC0 (最基本的 User - Role - Permission) 的模型大至上可以符合需求，不過在權限配直的時候會有一點重工，所以選擇了有角色繼承的 RBAC1 來進行實作
 tags:
   - rbac1
   - rbac
   - postgres
+resources:
+- name: "featured-image-preview"
+  src: "img/rbac1.jpeg"  
 ---
-
-權限系統在任何應用程式都是基礎且重要的部份，主要是對不同的人訪問資源進行權限的控制，本篇文章並沒有特別的再說明 Role-Based Access Control, 解釋的文章已經太多了，隨便 Google 都是一堆。最期在公司的專案也是有採用 RBAC 來管控系統的權限，一般的 RBAC0 (最基本的 User - Role - Permission) 的模型大至上可以符合需求，不過在權限配直的時候會有一點重工，所以選擇了有角色繼承的 RBAC1 來進行實作
-
-_RBAC1_
-
-{{<img src="/posts/rbac1-design/img/rbac1.jpeg">}}
-
-
-_Postgres Database Schema_
-{{<img src="/posts/rbac1-design/img/public.png">}}
 
 <!--more-->
 
-#### public.actions
+權限系統在任何應用程式都是基礎且重要的部份，主要是對不同的人訪問資源進行權限的控制，本篇文章並沒有特別的再說明 Role-Based Access Control, 解釋的文章已經太多了，隨便 Google 都是一堆。最期在公司的專案也是有採用 RBAC 來管控系統的權限，一般的 RBAC0 (最基本的 User - Role - Permission) 的模型大至上可以符合需求，不過在權限配直的時候會有一點重工，所以選擇了有角色繼承的 RBAC1 來進行實作
+
+{{<image src="/posts/rbac1-design/img/rbac1.jpeg" caption="RBAC1">}}
+
+{{<image src="/posts/rbac1-design/img/public.png" caption="Postgres Database Schema">}}
+
+### public.actions
 
 column | comment | type | length | default | constraints | values
 --- | --- | --- | --- | --- | --- | ---
@@ -31,7 +30,7 @@ description |  | text |  |  |  |
 created_at |  | timestamp with time zone |  |  |  | 
 updated_at |  | timestamp with time zone |  |  |  | 
 
-#### public.permissions
+### public.permissions
 
 column | comment | type | length | default | constraints | values
 --- | --- | --- | --- | --- | --- | ---
@@ -42,7 +41,7 @@ key |  | text |  |  |  |
 created_at |  | timestamp with time zone |  |  |  | 
 updated_at |  | timestamp with time zone |  |  |  | 
 
-#### public.resources
+### public.resources
 
 column | comment | type | length | default | constraints | values
 --- | --- | --- | --- | --- | --- | ---
@@ -51,14 +50,14 @@ name |  | text |  |  |  |
 created_at |  | timestamp with time zone |  |  |  | 
 updated_at |  | timestamp with time zone |  |  |  | 
 
-#### public.role_permission
+### public.role_permission
 
 column | comment | type | length | default | constraints | values
 --- | --- | --- | --- | --- | --- | ---
 **permission_id** _(pk)_ |  | character varying | 21 |  | NOT NULL, [permission_id](#public-permissions) | 
 **role_id** _(pk)_ |  | character varying | 21 |  | NOT NULL, [role_id](#public-roles) | 
 
-#### public.roles
+### public.roles
 
 column | comment | type | length | default | constraints | values
 --- | --- | --- | --- | --- | --- | ---
@@ -71,14 +70,14 @@ enabled |  | boolean |  |  |  |
 created_at |  | timestamp with time zone |  |  |  | 
 updated_at |  | timestamp with time zone |  |  |  | 
 
-#### public.user_role
+### public.user_role
 
 column | comment | type | length | default | constraints | values
 --- | --- | --- | --- | --- | --- | ---
 **role_id** _(pk)_ |  | character varying | 21 |  | NOT NULL, [role_id](#public-roles) | 
 **user_id** _(pk)_ |  | character varying | 21 |  | NOT NULL, [user_id](#public-users) | 
 
-#### public.users
+### public.users
 
 column | comment | type | length | default | constraints | values
 --- | --- | --- | --- | --- | --- | ---
@@ -377,8 +376,8 @@ FROM (SELECT gdr.user_id,
 
     最後一部份就是將經過 recursive 查詢後的 user - role 表去 join permission 拿到 user 對應 role 之後的權限表，然後將這一個查詢作成 View 方便後序使用
 
-4. _Demo RBAC1_
-{{<img src="/posts/rbac1-design/img/rbac1.png">}}
+4. Demo RBAC1
+      {{<image src="/posts/rbac1-design/img/rbac1.png" caption="Demo RBAC1">}}
 
 
 ### DB fiddle Playground

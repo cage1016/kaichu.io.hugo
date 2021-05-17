@@ -2,20 +2,21 @@
 date: 2021-05-13T06:37:40Z
 title: "Build Kuberntes GRPC Health Probe with Pack"
 draft: false
-desc: 在 Kubernetes Pod 的生命周期中我們可以使用 `livenessProbe` 及 `readinessProbe` 探針來檢查服務健康，本篇文章簡單介紹了如何為 GRPC Service / Client 對應 `grpc_health_probe` 的配置設定及服務健康的檢查，最後使用 buildpack 建構所需 container image 含動態下載 Github `grpc_health_probe` Assets
+description: 在 Kubernetes Pod 的生命周期中我們可以使用 `livenessProbe` 及 `readinessProbe` 探針來檢查服務健康，本篇文章簡單介紹了如何為 GRPC Service / Client 對應 `grpc_health_probe` 的配置設定及服務健康的檢查，最後使用 buildpack 建構所需 container image 含動態下載 Github `grpc_health_probe` Assets
 tags:
   - kubernetes
   - grpc
   - pack
+resources:
+- name: "featured-image-preview"
+  src: "img/pod-loap.jpeg"
 ---
 
-Kuberntes Pod 生命周期
-{{<img src="/posts/build-kubernetes-grpc-health-probe-with-pack/img/pod-loap.jpeg">}}
-(ref: https://www.qikqiak.com/k8strain/k8s-basic/pod-life/)
+<!--more-->
+
+![Kuberntes Pod 生命周期](img/pod-loap.jpeg "Kuberntes Pod 生命周期")
 
 在 Kubernetes Pod 完整的生命周期包含了三個部份: `Iinit container` `Pod Hook` `健康檢查`。這三部都會影響到 Pod 的生命周期，而本篇文章說明如何使用 pack 打包 [grpc-health-probe](https://github.com/grpc-ecosystem/grpc-health-probe/) 來支援 GRPC 健康檢查
-
-<!--more-->
 
 ### Kubernetes livenessProbe & readinessProbe
 
@@ -35,7 +36,7 @@ Kuberntes Pod 生命周期
 
 ### Health checking gRPC servers on Kubernetes
 
-{{<img src="/posts/build-kubernetes-grpc-health-probe-with-pack/img/grpc_health_probe.png">}}
+![grpc_health_probe](img/grpc_health_probe.png "grpc_health_probe")
 (ref: https://kubernetes.io/blog/2018/10/01/health-checking-grpc-servers-on-kubernetes/)
 
 本篇文章因為要檢查 GRPC 服務是否健康，則屬於第一種 `ExecAction` 的範籌。[Health checking gRPC servers on Kubernetes | Kubernetes](https://kubernetes.io/blog/2018/10/01/health-checking-grpc-servers-on-kubernetes/) 文章也說明如何使用 [grpc-health-probe](https://github.com/grpc-ecosystem/grpc-health-probe/) 工具來檢查 GRPC 是否健康
@@ -58,7 +59,7 @@ spec:
       exec:
         command: ["/layers/cage1016_github-assets-cnb/github-assets/bin/grpc_health_probe", "-addr=:10021"]
       initialDelaySeconds: 10
-      periodSeconds: 20      
+      periodSeconds: 20
 ```
 
 在 exec ommand 中 `grpc_health_probe` 的執行檔是 `/layers/cage1016_github-assets-cnb/github-assets/bin/grpc_health_probe` 而非 [grpc-health-probe](https://github.com/grpc-ecosystem/grpc-health-probe/) 中看到的 `/bin/grpc_health_probe` 則是本篇的重點，我們慢慢說明
@@ -126,7 +127,7 @@ healthy: SERVING
 
 > 本篇文章的重點就是如何使用 `Pack` 來建構含有 `grpc_health_probe` 功能的 container image
 
-方法一 `Dockerfile`  
+方法一 `Dockerfile`
 
 ```dockerfile
 FROM gcr.io/gcp-runtimes/go1-builder:1.14 AS builder
@@ -177,7 +178,7 @@ buildpack `cage1016/github-assets-cnb@1.1.0` 提供了一個簡易的方式讓�
     ```bash
     cat <<EOF >> project.toml
     # [[build.env]]
-    # optional, github token for private assets 
+    # optional, github token for private assets
     # name = "TOKEN"
     # value = "<github-token>"
 
@@ -296,7 +297,7 @@ buildpack `cage1016/github-assets-cnb@1.1.0` 提供了一個簡易的方式讓�
 
     我們可以看到 `DETECTING` 的階段有正確偵測到我們明確指定的 4 個 buildpack，並在 `BUILDING` 階段也有正確下載 Github grpc-ecosystem/grpc-health-probe asset 至 container image 中
 
-    {{<img src="/posts/build-kubernetes-grpc-health-probe-with-pack/img/dive-0.png">}}
+    ![grpc-health-probe asset container image](img/dive-0.png "grpc-health-probe asset container image")
 
     而依照 `cage1016/github-assets-cnb` 中實作 buildpack sepc 所提供的目錄為 `/layers/cage1016_github-assets-cnb/github-assets/bin/grpc_health_probe` 如圖所示，而這個路徑也是我們在 Kubernetes Pod 在 `livenessProbe` 及 `readinessProbe` 探針指令執行檔所在
 
@@ -334,12 +335,12 @@ buildpack `cage1016/github-assets-cnb@1.1.0` 提供了一個簡易的方式讓�
 
 在 `Dockerfile` 中使用 `wget` 動態去下載所需要的檔案算是一種常規的作法。反之在 buildapck 的架構之下要下載一個檔案卻有一點複雜，也是常常有需要下載 Github Assets 的剛性需求，特別寫了一個符合 Cloud Native Buildpack 的 [cage1016/github-assets-cnb](https://github.com/cage1016/github-assets-cnb) buildpack 來滿足這個需求，當這一個生態越來越豐富時，就會慢慢感覺像是在疊責木一樣
 
-如同 [cage1016/ms-demo](https://github.com/cage1016/ms-demo) 這個 gokit microserives demo 一樣，`Add` 及 `Tictac` 服務基本上都改用 pack 來建構 container image，為了在 Kubernetes Pod 新增 `livenessProbe` 及 `readinessProbe` 探針並使用 `grpc_health_probe` 來檢查 GRPC 服務的健康狀況，其實就是新增了 `project.toml` 
+如同 [cage1016/ms-demo](https://github.com/cage1016/ms-demo) 這個 gokit microserives demo 一樣，`Add` 及 `Tictac` 服務基本上都改用 pack 來建構 container image，為了在 Kubernetes Pod 新增 `livenessProbe` 及 `readinessProbe` 探針並使用 `grpc_health_probe` 來檢查 GRPC 服務的健康狀況，其實就是新增了 `project.toml`
 
 ```bash
 cat <<EOF >> project.toml
 # [[build.env]]
-# optional, github token for private assets 
+# optional, github token for private assets
 # name = "TOKEN"
 # value = "<github-token>"
 
@@ -366,7 +367,7 @@ value = "grpc_health_probe"
 EOF
 ```
 
-及 
+及
 
 ```yaml
 ...
@@ -376,7 +377,7 @@ readinessProbe:
   exec:
     command: ["/layers/cage1016_github-assets-cnb/github-assets/bin/grpc_health_probe", "-addr=:10021"]
   initialDelaySeconds: 5
-livenessProbe:           
+livenessProbe:
   exec:
     command: ["/layers/cage1016_github-assets-cnb/github-assets/bin/grpc_health_probe", "-addr=:10021"]
   initialDelaySeconds: 10

@@ -1,7 +1,7 @@
 ---
 date: 2016-03-28T10:23:59+08:00
 title: gae link pip helper
-desc: '如何利用 virtualenv, virtualenvwrapper, requirements.txt, linkenv, link_pip 快速建置 Google App Engine - Python 開發環境'
+description: '如何利用 virtualenv, virtualenvwrapper, requirements.txt, linkenv, link_pip 快速建置 Google App Engine - Python 開發環境'
 tags:
   - Shell
   - Python
@@ -10,9 +10,10 @@ tags:
   - virtualenv
 ---
 
+<!--more-->
+
 Python 的社群非常活躍有非常多好用的套件可以使用，也有 `pip` 的套件管理程式來讓開發者管理套件升級、版控等問題
 
-<!--more-->
 
 ## virtualenv
 

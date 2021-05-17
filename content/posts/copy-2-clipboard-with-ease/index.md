@@ -4,9 +4,13 @@ title: copy 2 clipboard with ease
 tags:
   - chrome
   - extension
+description: Chrome extension - A simple and quick way to copy title and url with ease in chrome browser.
+resources:
+- name: "featured-image-preview"
+  src: "img/options-1.jpg"
 ---
 
-> A simple and quick way to copy title and url with ease in chrome browser.
+<!--more-->
 
 # features
 ## There have four options:
@@ -37,11 +41,11 @@ the default copy patter is **url (title)**, you can change whatever you want but
 # Snapshot
 copy 2 clipboard with ease browser action
 
-{{<img src="/posts/copy-2-clipboard-with-ease/ad1280x800.jpg">}}
+{{<image src="img/ad1280x800.jpg">}}
 
 copy 2 clipboard with ease copy pattern option 
-{{<img src="/posts/copy-2-clipboard-with-ease/options-1.jpg">}}
-{{<img src="/posts/copy-2-clipboard-with-ease/options-2.jpg">}}
+{{<image src="img/options-1.jpg">}}
+{{<image src="img/options-2.jpg">}}
 
 # github
 

@@ -6,14 +6,15 @@ tags:
   - golang
   - regEx
   - Live API
-desc: 在 Golang 中利用 regEx 找到 Facebook Live rtmp server url and stream key
+description: 在 Golang 中利用 regEx 找到 Facebook Live rtmp server url and stream key
 date: 2017-02-21 22:34:59
+toc: false
 ---
 
+<!--more-->
 
 最近因為公司專案的關係，開始接觸 Facebook Live API，需要動態的透過 API 去建立一組 Live 直播 並將 rtmp 的整個字串拆解成 `ServerUrl` 及 `StreamKey` 二個部份再由 ffmpeg 拿到這個資訊去 streaming。因為 Youtube Data API v3 可以別分拿 `StreamName` 及 `IngestionAddress`, 所以只需要對 Facebook 的部份特別處理
 
-<!-- more -->
 
 先來看一下 Facebook Live API 建立直播拿回來的完整的 rmtp url
 

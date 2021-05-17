@@ -1,13 +1,18 @@
 ---
 date: 2015-11-01T23:39:07+08:00
 title: django getting started
-desc: 簡單說明如何快速建立一個 Django 專案及搭配 Virtualenv, PyCharm
+description: 簡單說明如何快速建立一個 Django 專案及搭配 Virtualenv, PyCharm
 tags:
   - Python
   - Django
   - twoscoops
   - PyCharm
+resources:
+- name: "featured-image-preview"
+  src: "img/django-getting-started-09.png"
 ---
+
+<!--more-->
 
 Django Quick Getting Started
 
@@ -19,8 +24,6 @@ Django Quick Getting Started
 - PyCharm
 
 簡單說明如何快速建立一個 Django 專案及搭配 Virtualenv, PyCharm
-
-<!--more-->
 
 ## Virtualenv
 
@@ -152,7 +155,7 @@ Available subcommands:
 (env_QGS) $ tree
 .
 └── my_site                # django project root
-    ├── manage.py          
+    ├── manage.py
     └── my_site            # django app root
         ├── __init__.py
         ├── settings.py
@@ -163,7 +166,7 @@ Available subcommands:
 (env_QGS) $ python mysite/manage.py runserver
 ```
 
-{{<img src="/posts/django-getting-started/django-getting-started-01.png">}}
+{{<image src="img/django-getting-started-01.png">}}
 
 **Tips:**
 
@@ -173,7 +176,7 @@ Available subcommands:
 
 [Two Scoops Press: Making Python and Django as fun as ice cream](http://twoscoopspress.org/)
 
-{{<img src="/posts/django-getting-started/django-getting-started-02.png">}}
+{{<image src="img/django-getting-started-02.png">}}
 
 twocoops 是一本書，這本書教你如何最佳實踐 Django 1.8，如上一節提的問題(multiple requirements.txt、settings)等配置方式
 
@@ -217,7 +220,7 @@ $ tree
     │   │   │   ├── base.py
     │   │   │   ├── local.py
     │   │   │   ├── production.py
-    │   │   │   └── test.py    
+    │   │   │   └── test.py
     │   │   ├── urls.py
     │   │   └── wsgi.py
     │   ├── static
@@ -236,7 +239,7 @@ $ tree
     └── requirements.txt
 ```
 
-{{<img src="/posts/django-getting-started/django-getting-started-03.png">}}
+{{<image src="img/django-getting-started-03.png">}}
 
 **Tips:**
 
@@ -279,22 +282,22 @@ Running migrations:
 Pycharm 是一個很好用的 Python 編輯器，我最喜歡的部份是可以拿來 debug。不過在開發環境上需要設定一下才能配合 `virtualenv` + `twoscoops`
 
 **Project structure 設定 _mysite2(django project level)_ 為source**
-{{<img src="/posts/django-getting-started/django-getting-started-04.png">}}
+{{<image src="img/django-getting-started-04.png">}}
 
 **Project interpreter 加入已經建立好的 virtualenv**
-{{<img src="/posts/django-getting-started/django-getting-started-05.png">}}
+{{<image src="img/django-getting-started-05.png">}}
 
 **設定 Django (Django project, settings, manage.py path)**
-{{<img src="/posts/django-getting-started/django-getting-started-06.png">}}
+{{<image src="img/django-getting-started-06.png">}}
 
 **設定 Run/Debug Configration **
-{{<img src="/posts/django-getting-started/django-getting-started-07.png">}}
+{{<image src="img/django-getting-started-07.png">}}
 
 **Run with fly**
-{{<img src="/posts/django-getting-started/django-getting-started-08.png">}}
+{{<image src="img/django-getting-started-08.png">}}
 
 **Enjoying debug mode**
-{{<img src="/posts/django-getting-started/django-getting-started-09.png">}}
+{{<image src="img/django-getting-started-09.png">}}
 
 ## Reference
 - [Python 的虛擬環境及多版本開發利器─Virtualenv 與 Pythonbrew - OpenFoundry](http://www.openfoundry.org/tw/tech-column/8516-pythons-virtual-environment-and-multi-version-programming-tools-virtualenv-and-pythonbrew)

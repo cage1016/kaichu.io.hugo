@@ -5,14 +5,16 @@ tags:
   - tensorflow
   - retrain-model
   - coscup
-desc: >-
-  TensorFlow 是由 Google 所公布的開源機器學習平台，根據 Github 的數據統計，TensorFlow
-  成為2016年最受關注的十大開源專案之一。此次分享將介紹，如何在 NAS 上整合TensorFlow 及相關 Open source
-  project，以展示幾種相關的資料分析應用
+description: TensorFlow 是由 Google 所公布的開源機器學習平台，根據 Github 的數據統計，TensorFlow 成為2016年最受關注的十大開源專案之一。此次分享將介紹，如何在 NAS 上整合TensorFlow 及相關 Open source project，以展示幾種相關的資料分析應用
 date: 2016-08-22 17:30:55
+resources:
+- name: "featured-image-preview"
+  src: "tensorflow.png"
 ---
 
-{{<img src="/posts/retrain-inception-model-for-nas/tensorflow.png">}}
+<!--more-->
+
+![tensorflow logo](tensorflow.png "tensorflow logo")
 
 今年在 [COSCUP](http://coscup.org/2016/schedules.html) 2016 上分享了「**NAS 也可以揀土豆**」主題。
 
@@ -27,8 +29,6 @@ date: 2016-08-22 17:30:55
   - Convolutional neural network
 - Building a classifier for NAS
 - Study information
-
-<!--more-->
 
 ## slide
 

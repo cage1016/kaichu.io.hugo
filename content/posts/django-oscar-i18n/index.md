@@ -1,7 +1,7 @@
 ---
 date: 2016-04-14T10:29:17+08:00
 title: 筆記 - django oscar i18n
-desc: 如何在 django-oscar 使用自己的 locale 檔案
+description: 如何在 django-oscar 使用自己的 locale 檔案
 tags:
   - Python
   - Oscar
@@ -10,9 +10,10 @@ tags:
   - i18n
 ---
 
+<!--more-->
+
 [django-oscar](https://github.com/django-oscar/django-oscar) 是一個滿完整的開源的 EC 專案。Oscar 內建 i18n 是使用 [transifex](https://www.transifex.com/codeinthehole/django-oscar/)，依照 django-oscar 的說明，當 django-oscar 進行 master 的發佈時才會去更新相關的翻譯檔案，如果 i18n 的更新速度沒有辦法符合自己的需求有二種方式，1)加入 transifex 專案幫忙翻譯，只是 django-oscar 的更新速度比較慢 2)使用本地的檔案
 
-<!--more-->
 
 目前 django-oscar 支援的 i18n
 

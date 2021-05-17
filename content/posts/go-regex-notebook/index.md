@@ -3,19 +3,19 @@ title: notebook - golang regexp
 tags:
   - go
   - regexp
-type: post
-desc: 簡單記鎑一下最近在專案上需要利用 go regexp 來進行字串的拆解
+draft: false
+description: 簡單記鎑一下最近在專案上需要利用 go regexp 來進行字串的拆解
 date: 2017-08-30 21:41:49
+resources:
+- name: "featured-image-preview"
+  src: "img/go-regexp-notebook-1.png"
 ---
-
-{{<img src="/posts/go-regex-notebook/go-regexp-notebook-1.png">}}
-
-
-簡單記鎑一下最近在專案上需要利用 regex 來進行字串的拆解
 
 <!--more-->
 
+{{<image src="img/go-regexp-notebook-1.png">}}
 
+簡單記鎑一下最近在專案上需要利用 regex 來進行字串的拆解
 
 ```yaml
 cfg:/etc/config/a.conf = 0

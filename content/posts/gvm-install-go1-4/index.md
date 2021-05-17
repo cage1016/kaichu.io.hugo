@@ -3,14 +3,14 @@ title: '解決 gvm install go1.4 安裝錯誤 [筆記]'
 tags:
   - Golang
   - gvm
-desc: 解決 gvm install go1.4 安裝錯誤訊息
-type: post
+description: 解決 gvm install go1.4 安裝錯誤訊息
+draft: false
 date: 2016-09-21T22:39:53.000Z
 ---
 
-本來是使用 `brew` 來管理 `golang` 的版本，`brew` 及 `brew cask` 某些程度是很方便，不過也越來越覺得彈性差了點。繼 node 使用 tj 大神的 [tj/n: Node version management](https://github.com/tj/n) 之外，golang 也打算使用 [moovweb/gvm: Go Version Manager](https://github.com/moovweb/gvm) 來管理版本，不過在照著官方步驟時報錯了，順手記錄了一下解決的方式
+<!--more-->
 
-<!-- more -->
+本來是使用 `brew` 來管理 `golang` 的版本，`brew` 及 `brew cask` 某些程度是很方便，不過也越來越覺得彈性差了點。繼 node 使用 tj 大神的 [tj/n: Node version management](https://github.com/tj/n) 之外，golang 也打算使用 [moovweb/gvm: Go Version Manager](https://github.com/moovweb/gvm) 來管理版本，不過在照著官方步驟時報錯了，順手記錄了一下解決的方式
 
 # brew info go
 

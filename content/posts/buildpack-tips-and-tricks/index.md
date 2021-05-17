@@ -1,14 +1,19 @@
 ---
 date: 2021-04-02T23:06:07+08:00
 title: "Buildpack Tips and Tricks"
-desc: CNCF 下的 buildpack 是定義出轉換程式碼至 image 的標準，使用者可以適擇適合的 builder (Google, HeroKu, Paketo) 來產出 container image，除了免去編輯 Dockerfile 的部份、container image layer 有相同的體驗、container image 的安全性交由 builder 來處理等等好處。不過美好的事情背後也是有一些取捨。本篇文章就是最近優化 CI/CD pipeline 流程上使用 buildpack 的心得分享還有遇到的坑及解決方案
+description: CNCF 下的 buildpack 是定義出轉換程式碼至 image 的標準，使用者可以適擇適合的 builder (Google, HeroKu, Paketo) 來產出 container image，除了免去編輯 Dockerfile 的部份、container image layer 有相同的體驗、container image 的安全性交由 builder 來處理等等好處。不過美好的事情背後也是有一些取捨。本篇文章就是最近優化 CI/CD pipeline 流程上使用 buildpack 的心得分享還有遇到的坑及解決方案
 tags:
   - buildpack
   - gcp
   - pack
   - heroku
   - paketo
+resources:
+- name: "featured-image-preview"
+  src: "img/buildpacks-social-card.jpeg"  
 ---
+
+<!--more-->
 
 2018 年去上海參加 Kubecon 就有聽到過 CNCF 下的 [Cloud Native Buildpacks](https://buildpacks.io/) 的專案。回來也有試玩了一下，概念很不錯，那時候可能整個生態系統比較不建全，試玩了一下就放到旁邊去了
 
@@ -65,7 +70,7 @@ pack build test_img --path apps/test-app --builder cnbs/sample-builder:bionic
 - 無惱 build container image 看似很美好，遇到 builder (Google, Heroku, Paketo) 不提供的部份就會很難受(踩到的坑後面再說)
 - 如果想 build 出 container image size 小的部份得看 builder 有沒有支援，(如: paketobuildpacks/builder:tiny)
 
-## 坑
+### 坑
 
 現在來談談最近遇到的坑，先來看看現在 pack 建議的 builders，有 Google、Heroku 和 Paketo 三個，使用者可以跟據自己的需求選擇適合的 builder
 

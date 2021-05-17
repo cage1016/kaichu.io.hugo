@@ -2,6 +2,7 @@
 title: "GoPherCon 2020 TW: 如何透過 Go-kit 快速搭建微服務架構應用程式實戰"
 date: 2020-11-16T10:50:48+08:00
 draft: false
+description: Golang 也因為開源、程式語法的簡潔開始受到程式開發人員的喜好。也因些在搭建微服務架構應用程式的時候有很多選擇，在 Web 框架中就有 Gin, Echo, Beego 等等，每一個 Web 框架都有其不同的特性，而 Go-Kit 是一個微服務開發的工具鏈，本場次將基於 Kuberentes/Istio 透過 Go-kit 搭建微服務架構應用程式實戰中的工程項目進行說明
 tags:
   - gokit
   - kubernetes
@@ -9,13 +10,16 @@ tags:
   - istio
   - toolchain
   - gophercon
+resources:
+- name: "featured-image-preview"
+  src: "img/0.jpeg"
 ---
 
-> Golang 也因為開源、程式語法的簡潔開始受到程式開發人員的喜好。也因些在搭建微服務架構應用程式的時候有很多選擇，在 Web 框架中就有 Gin, Echo, Beego 等等，每一個 Web 框架都有其不同的特性，而 Go-Kit 是一個微服務開發的工具鏈，本場次將基於 Kuberentes/Istio 透過 Go-kit 搭建微服務架構應用程式實戰中的工程項目進行說明
+<!--more-->
+
+![如何透過 Go-kit 快速搭建微服務架構應用程式實戰](img/0.jpeg "如何透過 Go-kit 快速搭建微服務架構應用程式實戰")
 
 在第一屆的 GopherCon TW 中分享 **如何透過 Go-kit 快速搭建微服務架構應用程式實戰**
-
-<!--more-->
 
 ### Aganda
 - Go-kit
@@ -46,6 +50,10 @@ Suggested builders:
 	Paketo Buildpacks:     paketobuildpacks/builder:tiny     Tiny base image (bionic build image, distroless run image) with buildpacks for Golang
 ```
 上面列出的是目前建議的實作 buildpack 的 builders，每一家 builder 提供的參數可能有些不一樣，就請大家參照各別的說明文件
+
+### 影片
+
+{{< youtube tcfVgusbqy0 >}}
 
 ### 投影片
 

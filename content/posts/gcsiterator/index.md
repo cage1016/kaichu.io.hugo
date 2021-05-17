@@ -1,12 +1,15 @@
 ---
 date: 2015-07-28T12:03:48+08:00
 title: GCSIterator (Python CSV iterator for Google Cloud Storage) via GAE
+description: 最近的專案常常需要在 GAE - Python 跟大 CSV (40MB)檔打交道。在 Python 中利用 `csv.reader` & `csv.DictReader` 可以很容易的處理 `csv` 讀取的動作。但是在 GAE 平台上一般 Request 時間只有 **60s**，而 Tasks Request 則有 **10mins** 的限制[3]，而在 GAE 上處理超大檔案的時候除了會遇到 `DeadlineExceededErrors` 的雷也會踩到 `Exceeded soft private memory limit` 的問題(預設 instance 的記憶體只有 **128MB**，在處理大 CSV 檔很容易踩到的雷)
 tags:
   - GCS
   - GAE
   - csv
   - Python
 ---
+
+<!--more-->
 
 最近的專案常常需要在 [GAE - Python](https://cloud.google.com/appengine/docs/python/) 跟大 CSV (40MB)檔打交道。在 Python 中利用 `csv.reader` & `csv.DictReader`
 可以很容易的處理 `csv` 讀取的動作。但是在 GAE 平台上一般 Request 時間只有 **60s**，而 Tasks Request 則有 **10mins** 的限制[3]，而在 GAE 上處理超大檔案的時候除了會遇到
@@ -17,7 +20,6 @@ tags:
 
 `google-api-python-client` 中實作了 GCS JSON API 的 chunks 下載(**MediaIoBaseDownload** [4])，在 chunks 下載時就必需另外處理斷行的問題(實作 Python csv.DictReader iterator 內解決斷行問題)
 
-<!--more-->
 
 ## GCSIterator.py
 

@@ -2,14 +2,19 @@
 date: 2021-04-08T13:58:19+08:00
 title: "Build Your Buildpack"
 draft: false
-desc: 在 Buildpack Tips and Tricks 上一篤文章中我們提到了 Cloud Native Buildpacks 專案發起的目的還有一些使用上的心得，一般的使用情境就是選擇適合的 builder (Google, Heroku, Paketo)，必要時可以指定額外的 buildpack 。本篇文章稍後也會介紹 buildpack 基本組成元件、如何編寫自己的 buildpack 及發佈至 buildpack registry
+description: 在 Buildpack Tips and Tricks 上一篤文章中我們提到了 Cloud Native Buildpacks 專案發起的目的還有一些使用上的心得，一般的使用情境就是選擇適合的 builder (Google, Heroku, Paketo)，必要時可以指定額外的 buildpack 。本篇文章稍後也會介紹 buildpack 基本組成元件、如何編寫自己的 buildpack 及發佈至 buildpack registry
 tags:
   - buildpack
   - gcp
   - pack
   - heroku
   - paketo
+resources:
+- name: "featured-image-preview"
+  src: "img/jq-cnb.png"  
 ---
+
+<!--more-->
 
 在 [Buildpack Tips and Tricks ｜ KaiChu](https://kaichu.io/posts/buildpack-tips-and-tricks/) 上一篤文章中我們提到了 [Cloud Native Buildpacks](https://buildpacks.io/) 專案發起的目的還有一些使用上的心得，一般的使用情境就是選擇適合的 builder (Google, Heroku, Paketo)，必要時可以指定額外的 buildpack 。本篇文章稍後也會介紹如何編寫自己的 buildpack 及如何發佈至 buildpack registry
 
@@ -127,8 +132,8 @@ Moving dependency...
 
 ### Builder
 
-![](https://buildpacks.io/docs/concepts/components/create-builder.svg)
-https://buildpacks.io/docs/concepts/components/builder/
+{{<image src="img/create-builder.svg" caption="builder" ref="https://buildpacks.io/docs/concepts/components/create-builder.svg">}}
+(ref: https://buildpacks.io/docs/concepts/components/create-builder.svg)
 
 > A builder is an image that contains all the components necessary to execute a build. A builder image is created by taking a build image and adding a lifecycle, buildpacks, and files that configure aspects of the build including the buildpack detection order and the location(s) of the run image
 
@@ -264,7 +269,7 @@ Buildpacks:
   cage1016/jq-cnb        1.0.0          -
 ```
 
-#### Buildpacks Utils Library
+### Buildpacks Utils Library
 
 > [cage1016/jq-cnb](https://github.com/cage1016/jq-cnb): A Cloud Native Buildpack that include jq
 
@@ -329,7 +334,7 @@ jobs:
 
 其實 buildpack 已經打造了一些工具來幫助開發者快速部署 [Tools · Cloud Native Buildpacks](https://buildpacks.io/docs/tools/)，本次的範例就是使用 Github action + Release 自己發佈，實際的內容也是 Github action 中使用 `pack package` 方法的一些操作，當成功 release 之後就可以在 buildpack registry 中查詢的到 https://registry.buildpacks.io/buildpacks/cage1016/jq-cnb
 
-{{<img src="/posts/build-your-buildpack/img/jq-cnb.png">}}
+{{<image src="/posts/build-your-buildpack/img/jq-cnb.png">}}
 
 最後我就可以直接使用
 

@@ -1,6 +1,6 @@
 ---
 title: iOS ringtone maker from YouTube video
-desc: 喜歡拿 YouTube 影片來製作自己客製作的 iPhone 鈴聲，cage1016/ios-ringtone-maker-yt container 幫你一口氣從下載音頻、裁切、轉檔(漸入漸出)、輸出至本地，剩下的就是透過 Garageband 輸出至手機即可
+description: 喜歡拿 YouTube 影片來製作自己客製作的 iPhone 鈴聲，cage1016/ios-ringtone-maker-yt container 幫你一口氣從下載音頻、裁切、轉檔(漸入漸出)、輸出至本地，剩下的就是透過 Garageband 輸出至手機即可
 tags:
   - docker
   - annie
@@ -10,6 +10,7 @@ tags:
 date: 2020-06-20 12:13:48
 ---
 
+<!--more-->
 
 最近大竹弟打電話問說 iOS 鈴聲在 Garageband 上面製作的檔案怎麼這麼大，其實只有 5 秒的鈴聲
 
@@ -23,8 +24,6 @@ date: 2020-06-20 12:13:48
 以前我自己也是換過不少鈴聲，以前是透過 [Free Ringtones for Android and iPhone. Free Ringtone Maker - Audiko](https://sur.ly/o/audiko.tw/AA000014) 選擇喜歡的檔案下載安裝
 
 雖然現成的工具方便，不過有時候找不到自己喜歡的歌曲，那就土砲一個吧
-
-<!--more-->
 
 ### iOS ringtone maker from YouTube video
 

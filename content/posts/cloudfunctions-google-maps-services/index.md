@@ -4,10 +4,15 @@ tags:
   - cloudfunctions
   - googlemaps
   - GCP
-type: post
-desc: fetch travel distances and duration by Google Maps Distance Matrix API via Google Cloud Functions
+draft: false
+description: fetch travel distances and duration by Google Maps Distance Matrix API via Google Cloud Functions
 date: 2017-08-18 00:42:29
+resources:
+- name: "featured-image-preview"
+  src: "img/cloudfunctions-google-maps-services-1.png"
 ---
+
+<!--more-->
 
 ### Waldo-gcp
 
@@ -22,8 +27,6 @@ date: 2017-08-18 00:42:29
 臺北市松山區南京東路五段123巷1弄15號,
 高雄市五福四路131號2樓
 ```
-
-<!--more-->
 
 ```shell
 # 透過 Google Maps Distance Matrix API 計算出  origin, destination, distance, duration
@@ -40,7 +43,7 @@ date: 2017-08-18 00:42:29
 臺北市松山區南京東路五段123巷1弄15號, 高雄市五福四路131號2樓, 359485, 14338
 ```
 
-{{<img src="/posts/cloudfunctions-google-maps-services/cloudfunctions-google-maps-services-1.png">}}
+{{<image src="img/cloudfunctions-google-maps-services-1.png">}}
 
 ### CloudFunctions Google maps service
 
@@ -114,7 +117,7 @@ $ make describe_http
 
 ### CloudFunctions
 
-{{<img src="/posts/cloudfunctions-google-maps-services/cloudfunctions-google-maps-services-2.png">}}
+{{<image src="img/cloudfunctions-google-maps-services-2.png">}}
 
 ## Reference
 - [googlemaps/google-maps-services-js: Node.js client library for Google Maps API Web Services](https://github.com/googlemaps/google-maps-services-js)

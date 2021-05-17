@@ -2,20 +2,21 @@
 date: 2021-05-07T08:39:11Z
 title: "Github Script Repos and Collaborators List Sync"
 draft: false
-desc: 記錄了如何將整理 Github 公用帳號列表及成員的簡單服務從 GAE cron job 搬到 Github Actions 的使用方式
+description: 記錄了如何將整理 Github 公用帳號列表及成員的簡單服務從 GAE cron job 搬到 Github Actions 的使用方式
 tags:
   - github
   - actions
+resources:
+- name: "featured-image-preview"
+  src: "img/1.png"  
 ---
 
-Google Spreadsheet
-{{<img src="/posts/github-script-repos-and-collaborators-list-sync/img/0.png">}}
-
-
-Github Markdown
-{{<img src="/posts/github-script-repos-and-collaborators-list-sync/img/1.png">}}
-
 <!--more-->
+
+![](img/0.png "Google Spreadsheet")
+
+![](img/1.png "Github Markdown")
+
 
 在 2018 年時為了公用帳號有一個 Github repostiories & collaborators 列表的需求，還特別在 GAE 上用 Golang 寫了一個服務並啟用 cron job
 
@@ -42,11 +43,11 @@ cron:
 
 - [GitHub GraphQL API](https://docs.github.com/en/graphql/overview/explorer): Github Graphql Playground
 
-  {{<img src="/posts/github-script-repos-and-collaborators-list-sync/img/3.png">}}
+  ![](img/3.png "grpchql")
 
 - [nektos/act: Run your GitHub Actions locally 🚀](https://github.com/nektos/act): 不得不提這一個工具，可以在本地端開發測試 Github Action，本地就可以開發就是方便
 
-  {{<img src="/posts/github-script-repos-and-collaborators-list-sync/img/act-quickstart-2.gif">}}
+  ![](img/act-quickstart-2.gif "act demo")
   (pic https://github.com/nektos/act)
 
 - [actions/github-script: Write workflows scripting the GitHub API in JavaScript](https://github.com/actions/github-script): 在寫 Github Action workflows scripts 時可以直接用 Javascript 呼到 Github API，包好了直接用方便

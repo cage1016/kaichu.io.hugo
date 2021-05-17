@@ -1,17 +1,18 @@
 ---
 date: 2016-03-10T10:41:40+08:00
 title: gae appcfg update 403
-desc: '在使用 GAE command line tools 上傳專案至 appengine.google.com 上時，會遇到 HTTP Error 403: Forbidden Unexpected HTTP status 403. Aborting 的訊息，如何解決問題。'
+description: '在使用 GAE command line tools 上傳專案至 appengine.google.com 上時，會遇到 HTTP Error 403: Forbidden Unexpected HTTP status 403. Aborting 的訊息，如何解決問題。'
 tags:
   - Python
   - GAE
   - appcfg
+toc: false  
 ---
+
+<!--more-->
 
 當 GAE application 本地開發到一個階段時，就會開始想要上傳至 appengine.google.com 進行線上的測試，這時候便會使 command line 工
 具來上傳專案
-
-<!--more-->
 
 ```shell
 $ appcfg.py update default/app.yaml ownership/app.yaml

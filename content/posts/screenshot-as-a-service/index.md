@@ -5,12 +5,15 @@ tags:
   - chromeless
   - puppeteer
   - GAE
-type: post
-desc: >-
-  Simple demonstrate multiple way to create screenshot via phantomjs, chromeless
-  and puppeteer and build screenshot as a service via GAE flex runtime.
+draft: false
+description: Simple demonstrate multiple way to create screenshot via phantomjs, chromeless and puppeteer and build screenshot as a service via GAE flex runtime.
 date: 2017-09-09 00:23:00
+resources:
+- name: "featured-image-preview"
+  src: "img/screenshot-as-a-service-1.png"
 ---
+
+<!--more-->
 
 [GCPUG Taiwan Meetup #29](https://gcpugtw.kktix.cc/events/meetup201709) Screenshot as a service
 
@@ -18,13 +21,11 @@ date: 2017-09-09 00:23:00
 
 {{< slideshare id="79563683" >}}
 
-<!--more-->
-
 ### Waldo-gcp
 
 > 一個基本 Google Map 上計算最佳路徑的實小服務
 
-{{<img src="/posts/screenshot-as-a-service/screenshot-as-a-service-1.png">}}
+{{<image src="img/screenshot-as-a-service-1.png">}}
 
 當初會想弄一個 screenshot 的服務是因為 [slideshare: Waldo-gcp](https://goo.gl/fnqLaZ) 中會有擷圖的需求，且需要跟 GAE 進行整合，所以選擇了滿多人使用的 [PhantomJS](https://goo.gl/DT28P) 來實作擷圖的服務並使用 GAE flex runtime 的型式發佈到 GAE 平台上作為專案的 microservice 使用
 
@@ -137,6 +138,6 @@ ENTRYPOINT ["/nodejs/bin/npm", "start"]
 
 `DockerFile` 的重點則是準備好基本的 library 及 Express/Phantomjs 的配置。準備好 `DockerFile`，`app.yaml` 還有程式碼，就可以透過 `gcloud -q app deploy` 的指命將服務推到 GCP 上
 
-{{<img src="/posts/screenshot-as-a-service/screenshot-as-a-service-2.png">}}
+{{<image src="img/screenshot-as-a-service-2.png">}}
 
 > https://waldo-gcp-testbed.appspot.com/screenshot/usage.html

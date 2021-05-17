@@ -8,9 +8,13 @@ tags:
   - vscode
   - GoLand
 date: 2019-10-04 01:03:16
-desc: skaffold v38.0 開始支持 Go container debugging support，非常大程度解決先前 remote debug golang 的痛苦
+description: skaffold v38.0 開始支持 Go container debugging support，非常大程度解決先前 remote debug golang 的痛苦
+resources:
+- name: "featured-image-preview"
+  src: "img/skaffold-go-debug-image-4.png"
 ---
 
+<!--more-->
 
 今年的 [Google Cloud Summit 台北場](https://inthecloud.withgoogle.com/summit-tpe-19/agenda.html) 於 9/24 在內湖萬豪酒店舉行，在主題演講中再次聽到 [Cloud Code](https://cloud.google.com/code) 的部份也看到比較有感覺的 Live demo
 
@@ -20,9 +24,7 @@ desc: skaffold v38.0 開始支持 Go container debugging support，非常大程�
 
 基本上來說 Cloud Code 給 Visual Studio Code 和 IntelliJ IDE 的 plugin 就是基於 skaffold 打造的(如下圖)，當你在 Visual Studio Code 執行(cmd+shift+p) `Cloud Code: Continues Deploy` 的 log 就會知道
 
-{{<img src="/posts/skaffold-debug-goland/skaffold-go-debug-image-4.png">}}
-
-<!--more-->
+{{<image src="img/skaffold-go-debug-image-4.png">}}
 
 ## Cloud Code & debug
 
@@ -30,7 +32,7 @@ desc: skaffold v38.0 開始支持 Go container debugging support，非常大程�
 
 _Visual Studio Code 中 Cloud code 可以新增的專案範本_
 
-{{<img src="/posts/skaffold-debug-goland/skaffold-go-debug-image-5.png">}}
+{{<image src="img/skaffold-go-debug-image-5.png">}}
 
 > 依照官方文件，現在 Cloud Code 有整合 debug 的部份有 `Node.js`、 `Python`、`Java`。 `Go` 目前不支援, 不過在 skaffold v38.0 的時候終於加進了. (Add Go container debugging support [#2306](https://github.com/GoogleContainerTools/skaffold/pull/2306))，所以就有了這一篇文章。至於本來 Cloud Code 就有整合的語言就依照官方的操作流程應該就可以正常運作，所以這邊就不在說明了
 

@@ -2,16 +2,20 @@
 title: Atom sync-settings
 tags:
   - Atom
-desc: sync-settings 是一個可以無痛幫你備份 Atom 所有的設定(包含 package) 的擴充工具
-type: post
+description: sync-settings 是一個可以無痛幫你備份 Atom 所有的設定(包含 package) 的擴充工具
+draft: false
 date: 2016-09-20 22:58:40
+resources:
+- name: "featured-image-preview"
+  src: "img/atom-sync-settings-09.png"
 ---
+
+<!--more-->
 
 [Atom](https://goo.gl/LGBVzh) 是一個 GitHub 開發的免費、開放原始碼編輯器，目前有非常多的擴充工具可以安裝(**4,913** packages)，也有非常多的主題佈景可以安裝(**1,645** themes)，彈性非常的高，你可以打造成自己熟悉的開發環境。
 
-{{<img src="/posts/atom-sync-settings/atom-sync-settings-02.jpg">}}
+{{<image src="img/atom-sync-settings-02.jpg">}}
 
-<!--more-->
 
 當你好不容易打造好自己熟悉的開發環境時，如果要換電腦時，重新還原熟悉的開發環境是需要花一點功夫。以下是手動的方式
 
@@ -36,32 +40,32 @@ $ apm install --packages-file my_atom_packages.txt
   - **Personal Access Token** (一組適合特殊需求專給特定程式介接存取 github 資源用:這就是 sync-settings)
   - **Gist Id** (你的 Gist id)
 
-#### 建立 Personal Access Token
+### 建立 Personal Access Token
 
-{{<img src="/posts/atom-sync-settings/atom-sync-settings-03.jpg">}}
+{{<image src="img/atom-sync-settings-03.jpg">}}
 
 打開 [Github: Personal Access Tokens](https://github.com/settings/tokens/new) > 點選 gist > Generate token > 複製並填入 Atom:sync-settings 中
 
-#### 建立 Gist
+### 建立 Gist
 
 打開 [Create a new Gist](https://gist.github.com/) 填上說明 > Create secret gist > 複製 Gist Id 並填入 Atom:sync-settings 中
 
-{{<img src="/posts/atom-sync-settings/atom-sync-settings-04.jpg">}}
-{{<img src="/posts/atom-sync-settings/atom-sync-settings-05.jpg">}}
+{{<image src="img/atom-sync-settings-04.jpg">}}
+{{<image src="img/atom-sync-settings-05.jpg">}}
 
-#### Sync Backup
+### Sync Backup
 
 在填入 Personal Access Token 及 Gist Id 後，就可以進行同步的動作 `Shit + command + P` (Mac), `Ctrl + Shit + P` (Windows)
 
-{{<img src="/posts/atom-sync-settings/atom-sync-settings-06.jpg">}}
-{{<img src="/posts/atom-sync-settings/atom-sync-settings-07.jpg">}}
+{{<image src="img/atom-sync-settings-06.jpg">}}
+{{<image src="img/atom-sync-settings-07.jpg">}}
 
-#### Sync restore
+### Sync restore
 
 在其他電腦上裝好 Atom > 安裝 sync-settings > 進行 Sync: restore 的動作 `Shit + command + P` (Mac), `Ctrl + Shit + P` (Windows)
 
-{{<img src="/posts/atom-sync-settings/atom-sync-settings-08.png">}}
-{{<img src="/posts/atom-sync-settings/atom-sync-settings-09.png">}}
+{{<image src="img/atom-sync-settings-08.png">}}
+{{<image src="img/atom-sync-settings-09.png">}}
 
 最後分享一下我的 Atom 擴充工具清單
 

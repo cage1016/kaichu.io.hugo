@@ -8,21 +8,23 @@ tags:
   - GCP
   - NATS
   - CloudBuild
-desc: 透過 Google App Engine 和 NATS 建立 Websocket PUBSUB 伺服器
+description: 透過 Google App Engine 和 NATS 建立 Websocket PUBSUB 伺服器
 date: 2020-03-16 02:00:55
+resources:
+- name: "featured-image-preview"
+  src: "img/gae-custom-ws-0.png"
 ---
 
+<!--more-->
 
 在設計 API server 的時候會有遇到即時訊息傳遞的需求，同步可以用 GRPC 建立連線來溝通，為了降低系統的耦合性，可以選擇非同步的方式。而 PubSub 結合 websocket 是常用的方式。對於一位 Gopher 來說，[NATS](https://nats.io/) 是 [CNCF](https://www.cncf.io/) 下面中關於訊息傳遞的開源專案且對 Golang 友善(比 Kafka 好多了 XD)，選擇 [NATS](https://nats.io/) 的 PubSub 功能搭配 websocket 好像也是一個合理的選擇
-
-<!-- more -->
 
 在 Google App Engine 上搭建整個系統需要幾個知識點，讓我們一個一個來解釋，最後會附上完整的程式碼
 
 Google App Engine 有一個很棒的功能是非常容易的建立 service，每一個 service 可以類比成 microservice。現在已經支援了 `Python`, `Java`, `Node.js`, `PHP`, `Runy`, `Go` 等幾種程式語言，也可以在 standard, flex, custom runtime (打包成 Docker 就不受到程式語言限制了) 中進行混搭，怎麼搭配就看題目進行選擇
 
 不囉嗦，先看整個架構圖
-{{<img src="/posts/gae-custom-ws/gae-custom-ws-0.png">}}
+{{<image src="img/gae-custom-ws-0.png">}}
 
 這邊我們有 3 個 service + 1 個 Google compute engine instance
 
@@ -33,19 +35,19 @@ Google App Engine 有一個很棒的功能是非常容易的建立 service，每
 
 ## 知識點
 
-#### ## Google App Engine 上實作 websocket 只能使用 flex or custom runtime 
+### ## Google App Engine 上實作 websocket 只能使用 flex or custom runtime 
 
 這個是一個基本限制，如果在 Google App Engine 上有建立 websocket 的需求，只能選擇 `flex` or `custom` runtime. Google 官網有好幾個程式語言的範例[^1]
 
-#### ## 部著 NATS server
+### ## 部著 NATS server
 
 稍早提過，[NATS](https://nats.io/) 是 [CNCF](https://www.cncf.io/) 下面中關於訊息傳遞的開源專案且可以視為 cloud native (rock)，部署一個 NATS server 非常簡單。docker 就可以跑了，在 Google Cloud Platfrom 上我們可以透過 [Cloud Deployment Manager](https://cloud.google.com/deployment-manager) 一鍵部署一個 NATS Certified by Bitnami
 
-{{<img src="/posts/gae-custom-ws/gae-custom-ws-2.png">}}
+{{<image src="img/gae-custom-ws-2.png">}}
 
 部著成功之後可以查看到相關的訊息，包含要連線的密碼
 
-#### ## Google App Engine Access NATS server via Serverless VPC
+### ## Google App Engine Access NATS server via Serverless VPC
 
 當我們一開始建立 Google App Engine 專案時我問我們要部署在什麼 region
 
@@ -72,7 +74,7 @@ Google App Engine 有一個很棒的功能是非常容易的建立 service，每
 當我們使用 standard runtime 建立的應用程式有需要跟我們自己建立的 Google compute engine instance 進行溝通時，就必需透過 `VPC` 進行連線，阿不是在 GCP 專案下的機器是相通的嗎？
 > 一個簡單的判別方式，如果服務可以讓你設定 `network` 相關的設定就是；Google app engine standard runtime `app.yaml` 並沒有 `network` 相關可以配置的設定 (flex, custom runtime 中有)。而在 standard runtime 的 `beta` 中可以讓我們在 `app.yaml` 透過指定 `vpc_access_connector` 來 [Configuring Serverless VPC Access](https://cloud.google.com/vpc/docs/configure-serverless-vpc-access) 存取 Google compute engine[^2] 上相關的資源
 
-#### ## 透過 cloudbuild 部署整個 app engine application 需要的啟用的 API及權限
+### ## 透過 cloudbuild 部署整個 app engine application 需要的啟用的 API及權限
 
 ```bash
 $ gcloud app GROUP | COMMAND [GCLOUD_WIDE_FLAG ...]
@@ -156,7 +158,7 @@ cloud build 中的流程是
 
 ## demo
 
-{{<img src="/posts/gae-custom-ws/gae-custom-ws-4.gif">}}
+{{<image src="img/gae-custom-ws-4.gif">}}
 
 > Google app engine 還有一個佛心的部份就是自帶 HTTPS，所以我們實作的 websocket entrypoint 也可從 `ws://` 直接轉成 `wss://` (rock)
 

@@ -7,10 +7,15 @@ tags:
   - EndpointAPI
   - sendgrid
   - API
-type: post
-desc: wedding endpoint Service 負責整個專案最重要的資料收集部份，此篇建立簡單的範例來說明 endpoint API 的使用方式
+draft: false
+description: wedding endpoint Service 負責整個專案最重要的資料收集部份，此篇建立簡單的範例來說明 endpoint API 的使用方式
 date: 2017-07-12 22:51:05
+resources:
+- name: "featured-image-preview"
+  src: "img/weddingcnp-via-gpc-3_3.png"
 ---
+
+<!--more-->
 
 此篇就對 [Cage & Ping wedding](http://weddingcnp.appspot.com/) 中實作專案中最為重要的 backend API (endpoint API) 部份進行簡單的說明，每一個 Google App Engine Service 實作的細節會在後序的篇幅中介紹
 
@@ -25,13 +30,11 @@ date: 2017-07-12 22:51:05
 
 #### endpointAPI 設計實作
 
-{{<img src="/posts/weddingcnp-via-gcp-3/weddingcnp-via-gpc-3_1.png">}}
+{{<image src="img/weddingcnp-via-gpc-3_1.png">}}
 
-{{<img src="/posts/weddingcnp-via-gcp-3/weddingcnp-via-gpc-3_2.png">}}
+{{<image src="img/weddingcnp-via-gpc-3_2.png">}}
 
 [Cage & Ping wedding](http://weddingcnp.appspot.com/) 的網站大至上可以區分為靜態頁面(frontend Service, Golang) 及負責資料收集的 API (endpoints Service, Python). Google [Endpoints API](https://cloud.google.com/endpoints/docs/frameworks/legacy/v1/python/create_api)[^1] 是架構在 GAE 上的一個 RPC (remote procedure call) 服務。由於 endpoints API 是基於 [ProtoRPC remote.Service](https://cloud.google.com/appengine/docs/standard/python/tools/protorpc/) 實作出來的，所以在實作我們的方法時也是依照 protorpc 的方式來定義，小弟在寫 [Cage & Ping wedding](http://weddingcnp.appspot.com/) 這一個網站的時候 Endpoints API 還是 1.0，所以這篇文章還是以 Endpoints API 1.0 來說明
-
-<!-- more -->
 
 ### endpoint API demo project
 
@@ -67,7 +70,7 @@ INFO     2017-07-12 13:30:19,711 admin_server.py:116] Starting admin server at: 
 
 完全上述步驟後透過瀏覽器訪問 `http://localhost:8080/_ah/api/explorer` 就可以得到圖一中類似 [Google API explorer](https://developers.google.com/apis-explorer/#p/) 風格的本地測試頁面, 這是一個非常方便的工具，可以讓自己在本地透過瀏覽器直接操作自己定義的 endpointAPI
 
-{{<img src="/posts/weddingcnp-via-gcp-3/weddingcnp-via-gpc-3_3.png">}}
+{{<image src="img/weddingcnp-via-gpc-3_3.png">}}
 
 #### 專案架構
 

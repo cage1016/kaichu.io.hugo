@@ -1,19 +1,19 @@
 ---
 date: 2015-08-14T06:06:37.000Z
-desc: A simple sample for webpack + es6
+description: A simple sample for webpack + es6
 title: webpack es6 demo
 tags:
   - webpack
   - es6
 ---
 
+<!--more-->
+
 最近在[InfoQ](http://www.infoq.com/cn/) 中看到一篇文章 [成為一名優秀的Web前端開發者](http://goo.gl/MUBDUV)，裡面提到學習 [ECMAScript 2015](http://www.infoq.com/news/2015/06/ecmascript-2015-es6) 這一個部份，又因為在 github 看到越來越多 Javascript 專案始用 **ES6**
 
 > Javascript這個語言，是有「標準規格」的，叫做ECMA-262，這個標準規格，是由ECMA International (European Computer Manufacturers Association International)這個標準組織所制定，所以也稱呼它為ECMAScript。這個規格涵蓋了所有Javascript的核心，是各種Javascript執行環境一定會有的東西。在此之上，瀏覽器內就會額外加入DOM等擴充，而像node.js這樣的伺服器端環境，也有他自己的擴充，不過核心的部份是大家都一樣的。（附帶一提，C#的標準規格也是ECMA制定的） [初探 ES6（1）Harmony 的黑歷史 by fillano | CodeData](http://www.codedata.com.tw/javascript/introducing-es6-1-harmony-history/)
 
 2015 年的 ECMAScript 是一個顯著的更新。上一次版本 **ES5** 的標準是在 2009 年訂定的，AngularJS, Aurelia, ReactJS, Ionic 都是架構在 **ES5** 的基礎上， 不過 ReactJS 也開始支援了 **ES6**，身為一個前端的工程師也是時候開始學習了
-
-<!--more-->
 
 # ECMAScript 2015 (**ES6**)
 **ES6** 包含了很多的新特性，更詳細的說明請參照 [Reference - ES6](./{{< relref "#es6" >}})，本次的 Simple 只用到幾個 **ES6** 最基本用法

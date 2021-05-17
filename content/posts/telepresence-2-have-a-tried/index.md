@@ -2,13 +2,18 @@
 date: 2021-05-04T02:11:40Z
 title: "Telepresence 2 Have a Tried"
 draft: false
-desc: telepresence 是一個有效提升多微服務中連結本地開發的一個好用工具，它解決了 Skaffold 開發中本地 deubg 的不足，期待 GA 的到來
+description: telepresence 是一個有效提升多微服務中連結本地開發的一個好用工具，它解決了 Skaffold 開發中本地 deubg 的不足，期待 GA 的到來
 tags:
   - telepresence
   - debug
   - microservices
   - kubernetes
+resources:
+- name: "featured-image-preview"
+  src: "img/demo-architecture.jpg"    
 ---
+
+<!--more-->
 
 在開發 Kuberentes 應用程式時使用 [Skaffold](https://github.com/GoogleContainerTools/skaffold) 應該是基本操作了，Skaffold 可以幫忙加速開發的速度 (修改程式碼 → 構建 container image → push container image to registry (optional) → 部署至 Kubernets Cluster)，至於是否搭配 `Helm` 還是直接操作 `yaml` 就看個人喜好來決定
 
@@ -16,15 +21,13 @@ tags:
 
 ### Telepresence
 
-{{<img src="/posts/telepresence-2-have-a-tried/img/bird-on-bricks.svg">}}
-
-<!--more-->
+{{<image src="/posts/telepresence-2-have-a-tried/img/bird-on-bricks.svg">}}
 
 > Local development against a remote Kubernetes or OpenShift cluster
 
 > ** Note: Telepresence 1 is being replaced by our even better [Telepresence 2](https://github.com/telepresenceio/telepresence/tree/release/v2). Please try Telepresence 2 first and report any issues as we expect this will be the default by Q2 2021. **
 
-{{<img src="/posts/telepresence-2-have-a-tried/img/telepresence-architecture.inline.svg">}} (ref: https://www.getambassador.io/docs/telepresence/latest/reference/architecture/)
+{{<image src="/posts/telepresence-2-have-a-tried/img/telepresence-architecture.inline.svg" caption="telepresence architecture">}} (ref: https://www.getambassador.io/docs/telepresence/latest/reference/architecture/)
 
 (這邊以 Telepresence 2 為主) 基本上來說 Telepresence 透過 Traffic agent 將所有目標服務的流量/特定 header("x-telepresence-intercept-id") 請求重導至本機中，這樣我們就針對單一服務進行快速的進行開發，同時地機端如果也連接至 Kubernets Cluster 其他的資源也是相通的
 
@@ -88,7 +91,7 @@ kubectl delete svc,deploy -n ambassador traffic-manager
 | tictac  | Tic    |Expose Tic method (incrase value by Add Sum GRPC ) |
 | tictac  | Tac    |Expose Tac method (recive value)                   |
 
-{{<img src="/posts/telepresence-2-have-a-tried/img/demo-architecture.jpg">}}
+{{<image src="/posts/telepresence-2-have-a-tried/img/demo-architecture.jpg" caption="gokit microservice demo architecture">}}
 
 #### all TCP connections
 
@@ -168,11 +171,11 @@ kubectl delete svc,deploy -n ambassador traffic-manager
     }
     ```
 
-    {{<img src="/posts/telepresence-2-have-a-tried/img/debug.png">}}
+    {{<image src="/posts/telepresence-2-have-a-tried/img/debug.png" caption="debug">}}
 
 1. 設定 `Add` 服務中斷點 
 
-    {{<img src="/posts/telepresence-2-have-a-tried/img/debug-2.png">}}
+    {{<image src="/posts/telepresence-2-have-a-tried/img/debug-2.png" caption="debug">}}
 
 1. 獲取 `Tictac` 服務的 URL
 
@@ -192,7 +195,7 @@ kubectl delete svc,deploy -n ambassador traffic-manager
 
 1. VSCode 中執行中的 Add service 會成功攔截至流量並停在我們設置的中斷點中
 
-    {{<img src="/posts/telepresence-2-have-a-tried/img/debug-3.png">}}
+    {{<image src="/posts/telepresence-2-have-a-tried/img/debug-3.png" caption="debug">}}
 
 
 ####  header("x-telepresence-intercept-id")
@@ -240,7 +243,7 @@ Telepresence 除了全流量的攔截之外也支援特定的請求，基本上�
 
     > 這邊一個成功的因素是 tictac tic 呼叫 add sum GRPC 時一同把 header 的 x-telepresence-intercept-id 加到 context 才可以
 
-    {{<img src="/posts/telepresence-2-have-a-tried/img/debug-4.png">}}
+    {{<image src="/posts/telepresence-2-have-a-tried/img/debug-4.png" caption="debug">}}
 
 
 ### 結論

@@ -1,19 +1,23 @@
 ---
 date: 2015-07-27T15:24:58+08:00
 title: GAE-todomvc
+description: 最近需要幫內部基於 GAE - Python 平台上導入前端的框架，TodoMVC 是一個非常適合拿來學習前端框架的資源，它以**TodoMVC**的題目實作目前主流的前端框架(**React**、**Angular**、**Vuejs**、**Ember.js**、**Polymer** 等等)，你可以看到不同框架的優缺點，選擇一個最適合你的框架來學習。
 tags:
   - Front-end
   - GAE
   - todomvc
+resources:
+- name: "featured-image-preview"
+  src: "img/gae-todomvc-1.png"  
 ---
+
+<!--more-->
 
 最近需要幫內部基於[GAE - Python](https://cloud.google.com/appengine/docs/python/)平台上導入前端的框架，[TodoMVC](http://todomvc.com/)
 是一個非常適合拿來學習前端框架的資源，它以**TodoMVC**的題目實作目前主流的前端框架(**React**、**Angular**、**Vuejs**、**Ember.js**、**Polymer** 等等)，
 你可以看到不同框架的優缺點，選擇一個最適合你的框架來學習。
 
 在 [cage1016/gae-todomvc](https://github.com/cage1016/gae-todomvc) 中則選用了 `Reactjs (Flux)`、`AnguarJs`、`Vue.js` 三個前端框架來搭配 GAE-Python + Datastore + Endpoints APIs。
-
-<!--more-->
 
 ### Spec
 
@@ -87,7 +91,7 @@ $ dev_appserver.py app.yaml
 
 ### Screencapture
 
-{{<img src="/posts/gae-todomvc/gae-todomvc-1.png">}}
+{{<image src="img/gae-todomvc-1.png">}}
 
 ### GAE Endpoints APIs
 

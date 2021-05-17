@@ -1,13 +1,18 @@
 ---
 date: 2015-09-30T14:58:58+08:00
 title: 'Managed VMs lab'
-desc: '開發 App Engine，開發者雖然只要專注於 Data 及 Application 即可，但是也因為為享有諸多的服務而有所限制(目前只有支援 4 種程式語言 Golang, Python, Java, PHP、在 sandbox 中無法寫入檔案等限制)，而 Managed VMs 中引進了 docker 的元素讓 App Engine 有了更多的彈性。如: 可以進行檔案讀寫、自定 Runtime。'
+description: '開發 App Engine，開發者雖然只要專注於 Data 及 Application 即可，但是也因為為享有諸多的服務而有所限制(目前只有支援 4 種程式語言 Golang, Python, Java, PHP、在 sandbox 中無法寫入檔案等限制)，而 Managed VMs 中引進了 docker 的元素讓 App Engine 有了更多的彈性。如: 可以進行檔案讀寫、自定 Runtime。'
 tags:
   - Golang
   - GAE
   - Python
   - Managed-VMs
+resources:
+- name: "featured-image-preview"
+  src: "img/demo-managed-vms-architecture.jpg"  
 ---
+
+<!--more-->
 
 **Presentation**:
 
@@ -19,10 +24,8 @@ tags:
 [Google App Engine](https://cloud.google.com/appengine/docs) 是 [Google Cloud Platform](https://cloud.google.com/) 中一個 PasS (Platform as a service) 的服務. 在 Pass 的 GAE 中，開發者只需要專注於 **Application** 及 **Data**，
 其於的 **Runtime**、**Middleware**、**OS**、**Virtualization**、**Servers**、**Storage**、**Networking** 則完全被 Google 控制管理。
 
-<!--more-->
-
 _GAE Architecture_
-{{<img src="/posts/managed-vms-lab/01_WebApp_ArchDiagram.png">}}
+{{<image src="img/01_WebApp_ArchDiagram.png">}}
 picture: https://cloud.google.com/solutions/architecture/webapp
 
 App Engine 目前提供的執行環境有 `Python`、`Golang`、`Java`及`PHP` 4 種程式語言。支援多版本應用程式實例(multiple version)，
@@ -38,9 +41,10 @@ Tasks Queues 則提供了一種處理長時間請求的方式(600s)。而 App En
 Docker 是一種輕量的 container 技術，不同於 VM (Virtual Machine) 的地方是 Container 是在作業系統層面上實作虛擬化，直接使用本地主機的作業系統，
 而傳統方式則是在硬體層面實作。
 
-_Virtualization vs. Docker_
-{{<img src="/posts/managed-vms-lab/virtualization.png">}}
-{{<img src="/posts/managed-vms-lab/docker.png">}}
+
+{{<image src="img/virtualization.png" caption="Virtualization">}}
+vs.
+{{<image src="img/docker.png" caption="Docker">}}
 picture: https://philipzheng.gitbooks.io/docker_practice/content/introduction/what.html
 
 **Why Docker?**
@@ -86,7 +90,7 @@ Docker 則是一個新興的 container 技術，讓發開者可以更快速的�
 開發 App Engine，開發者雖然只要專注於 **Data** 及 **Application** 即可，但是也因為為享有諸多的服務而有所限制(目前只有支援 4 種程式語言 Golang, Python, Java, PHP、在 sandbox 中無法寫入檔案等限制)
 ，而 Managed VMs 中引進了 docker 的元素讓 App Engine 有了更多的彈性。如: **可以進行檔案讀寫**、**自定 Runtime**。
 
-{{<img src="/posts/managed-vms-lab/Managed-VMs.jpg">}}
+{{<image src="img/Managed-VMs.jpg">}}
 
 在使用 Managed VMs 時與一般的 App Engine 應用程式無異，差異的部份是在 `app.yaml` 中多設置了 `vm:true` 的配置
 
@@ -123,7 +127,7 @@ source code: [cage1016/managed-vms-lab](https://github.com/cage1016/managed-vms-
 
 _Demo Architecture_
 
-{{<img src="/posts/managed-vms-lab/demo-managed-vms-architecture.jpg">}}
+{{<image src="img/demo-managed-vms-architecture.jpg">}}
 
 _dispatch.yaml_
 

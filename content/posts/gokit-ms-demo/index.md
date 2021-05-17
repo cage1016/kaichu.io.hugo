@@ -5,11 +5,12 @@ tags:
   - kubernetes
   - microservices
   - istio
-desc: Kubernetes/istio manifest for Gokit microservice demo
-type: post
+description: Kubernetes Nginx ingress/Istio manifest for Gokit microservice demo
+draft: false
 date: 2020-11-03 17:50:10
 ---
 
+<!--more-->
 
 小弟在 GDG Devfest 2019 分享過 [Build go kit microservices at kubernetes with ease](https://www.slideshare.net/cagechung/gdg-devfest-2019-build-go-kit-microservices-at-kubernetes-with-ease)，Gokit 是一個建立 microservice 的 toolkit，Gokit 提出 `Transport` `Endpoint` `Service` 三種概念來幫助開始者進行架構分離，對單一微服務進行架構強制分離或許會增加程式碼的閱讀性，不過對一定規模的微服務來說，一致性的程式架構分離反而會增加多人開發的效率
 
@@ -21,8 +22,6 @@ date: 2020-11-03 17:50:10
 | tictac  | Expose Tic/Tac method |
 
 [cage1016/ms-demo: gokit microservice demo](https://github.com/cage1016/ms-demo) 提供了使用 gokit 建立的 kubernetes/istio 的 manifest, 可以讓使用者快速的練習基於 kubernetes/istio 來搭建 gokit 微服務
-
-<!--more-->
 
 ### Install
 

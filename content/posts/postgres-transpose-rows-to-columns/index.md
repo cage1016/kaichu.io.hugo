@@ -2,12 +2,14 @@
 date: 2021-02-04T10:52:45+08:00
 title: "Postgres Transpose Rows to Columns"
 draft: false
-desc: 延續上一篇文章 Rbac1 Design，透過 Postgres Transpose Rows to Columns (crosstab) 將行列互換，可以拿到一個基於每一個使用者基於 RBAC resource 對應操作權限
+description: 延續上一篇文章 Rbac1 Design，透過 Postgres Transpose Rows to Columns (crosstab) 將行列互換，可以拿到一個基於每一個使用者基於 RBAC resource 對應操作權限
 tags:
   - rbac1 
   - rbac 
   - postgres
 ---
+
+<!--more-->
 
 延續上一篇文章 [Rbac1 Design ｜ KaiChu](https://kaichu.io/posts/rbac1-design/), 我們透過 Postgres 中的 CTE (common table expression) recursive query 來查詢有繼承 Role 的有對應的權限
 
@@ -50,8 +52,6 @@ tags:
 
 透過 postgres 的 Transpose Rows to Columns 可以得到上面一個人眼比較直覺得大表
 核心的 sql 就是使用 `crosstab` 指令, 完整操作請看下方 full sql
-
-<!--more-->
 
 ```sql
 select *

@@ -1,8 +1,8 @@
 ---
 date: 2015-07-21T10:04:40+08:00
 title: Google Announce Application Default Credentials (ADC)
-desc: 今天 Google 公佈了 Application Default Credentials (ADC), 一個可以讓使用者更方便在 GCP 上去界接其他的需要使用 OAuth 存取的服務
-type: post
+description: 今天 Google 公佈了 Application Default Credentials (ADC), 一個可以讓使用者更方便在 GCP 上去界接其他的需要使用 OAuth 存取的服務
+draft: false
 tags:
   - APIs
   - GCP
@@ -10,12 +10,13 @@ tags:
   - GAE
 ---
 
+<!--more-->
+
 今天 Google 公佈了 [Application Default Credentials (ADC)](http://googlecloudplatform.blogspot.tw/2015/07/Easier-Auth-for-Google-Cloud-APIs-Introducing-the-Application-Default-Credentials-feature.html)，一個可以讓使用者更方便在 GCP 上去界接其他的需要使用 OAuth 存取的服務如 [Google Cloud Storage](https://cloud-dot-devsite.googleplex.com/storage)、[Google BigQuery](https://cloud-dot-devsite.googleplex.com/bigquery)。這對常常寫 GAE 的我來說又更方便了。
 
 在 GCP 專案建立之後，預設會自動產生 [Service Accounts](https://developers.google.com/accounts/docs/OAuth2ServiceAccount)，
 這些內建的 Service Accounts 在進行 Server to Server 的存取時只需要應用程式本身的認証，直接使用 `AppAssertionCredentials` 可以不需透過 `Flow` 來建立 `Credentials`物件
 
-<!--more-->
 
 ```python
 import httplib2

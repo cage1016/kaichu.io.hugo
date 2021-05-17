@@ -4,11 +4,16 @@ tags:
   - iOS
   - workflow
   - recipe
-desc: 在 iOS 上可以快速複製 titl 及 url/surl 的 recipe
+description: 在 iOS 上可以快速複製 titl 及 url/surl 的 recipe
 date: 2018-06-14 23:23:04
+resources:
+- name: "featured-image-preview"
+  src: "img/ad1280x800.jpg"
 ---
 
-{{<img src="/posts/copy2clipboardwitheasy/ad1280x800.jpg">}}
+<!--more-->
+
+{{<image src="img/ad1280x800.jpg">}}
 
 小弟之前在在 Chrome Extension Store 上發佈了一個簡單的小工具 [copy 2 clipboard with ease - Chrome Web Store](https://chrome.google.com/webstore/detail/copy-2-clipboard-with-eas/hiiobhaaokpmdmkkcaokdlanlemmcoah) 可以快速的複製頁面的 titl/url
 
@@ -20,10 +25,8 @@ date: 2018-06-14 23:23:04
 ### Copy2ClipboardWithEasy
 > 類似 Chrome Extension - copy 2 clipboard with ease 的功能，可以在 iOS 中進行 url/title 的複製操作
 
-{{<img src="/posts/copy2clipboardwitheasy/ios-workflow-1.PNG">}}
-{{<img src="/posts/copy2clipboardwitheasy/ios-workflow-2.PNG">}}
-
-<!--more-->
+{{<image src="img/ios-workflow-1.PNG">}}
+{{<image src="img/ios-workflow-2.PNG">}}
 
 ## Install 
 
