@@ -451,7 +451,7 @@ enableEmoji = true
       # Disqus comment config (https://disqus.com/)
       # Disqus 评论系统设置 (https://disqus.com/)
       [params.page.comment.disqus]
-        enable = true
+        enable = false
         # Disqus shortname to use Disqus in posts
         # Disqus 的 shortname，用来在文章中启用 Disqus 评论系统
         shortname = "kaichuio"
@@ -516,11 +516,11 @@ enableEmoji = true
       # Utterances comment config (https://utteranc.es/)
       # Utterances comment 评论系统设置 (https://utteranc.es/)
       [params.page.comment.utterances]
-        enable = false
+        enable = true
         # owner/repo
-        repo = ""
+        repo = "cage1016/cage1016.github.io"
         issueTerm = "pathname"
-        label = ""
+        label = "comment"
         lightTheme = "github-light"
         darkTheme = "github-dark"
     # Third-party library config
