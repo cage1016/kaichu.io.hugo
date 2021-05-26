@@ -29,3 +29,5 @@ EXPOSE 1313
 
 # [Optional] Uncomment if you want to install more global node packages
 # RUN sudo -u node npm install -g <your-package-list-here>
+
+RUN curl -LO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.0/diff-so-fancy && chmod +x diff-so-fancy && sudo mv diff-so-fancy /usr/bin/
