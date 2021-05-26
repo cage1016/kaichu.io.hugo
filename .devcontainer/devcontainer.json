@@ -27,7 +27,8 @@
 	"extensions": [
 		"bungcip.better-toml",
 		"davidanson.vscode-markdownlint",
-		"wmaurer.change-case"
+		"wmaurer.change-case",
+		"dbankier.vscode-quick-select"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
