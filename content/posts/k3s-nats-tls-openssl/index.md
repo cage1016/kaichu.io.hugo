@@ -1,6 +1,6 @@
 ---
 date: 2021-08-11T06:01:13Z
-title: "K3s Nats tls"
+title: "K3s Nats tls by openssl"
 draft: false
 description: 在開發 Kubernetes 應用程式時常使用 NATS 來作為內部 Pub/Sub 傳遞非同步訊息時使用，有時候也有對外開放的需求。而在本地機器開發時會採用輕量的 k8s cluster 解決方案，如 Kind, k3s, minikube 等來減輕本地開發資原的壓力，不過基於 container 的方式還是有一些限制，本篇文章以 k3s 為基礎來搭設開啟 TLS 的 NATS 服務器在本地的使用方式。
 tags:
