@@ -15,9 +15,10 @@ jobs:
         uses: actions/checkout@master
 
       - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
+        uses: actions/checkout@v2
         with:
           token: ${{ secrets.HUGO_GITHUB_PAT }}
+          submodules: recursive
 
       - name: checkout public repo
         uses: actions/checkout@v2
