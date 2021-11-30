@@ -1,7 +1,7 @@
 ---
 title: notebook - golang regexp
 tags:
-  - go
+  - golang
   - regexp
 draft: false
 description: 簡單記鎑一下最近在專案上需要利用 go regexp 來進行字串的拆解
