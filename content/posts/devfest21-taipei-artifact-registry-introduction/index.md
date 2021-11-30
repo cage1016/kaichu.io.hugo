@@ -11,9 +11,7 @@ tags:
   - artifact
 resources:
   - name: "featured-image-preview"
-    src: "img/placeholder.webp"
-images:
-  - "img/placeholder.webp"
+    src: "img/placeholder.png"
 ---
 
 Artifact Registry 可以說是 Container Registry 的進化版，可讓貴機構集中管理容器映像檔和語言套件 (例如 Maven 和 npm)。Artifact Registry 與 Google Cloud 的工具和執行階段全方位整合，並且支援原生構件通訊協定，讓您輕鬆與持續整合/持續推送軟體更新 (CI/CD) 工具整合，進而設定自動化管道。
