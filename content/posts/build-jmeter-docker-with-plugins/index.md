@@ -1,7 +1,7 @@
 ---
 date: 2021-12-23T09:03:20Z
 title: "Build Jmeter Docker With Plugins"
-draft: true
+draft: false
 description: TODO
 tags:
   - jmeter
