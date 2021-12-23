@@ -7,7 +7,8 @@ tags:
   - TODO
 resources:
   - name: "featured-image-preview"
-    src: "img/placeholder.png"  
+    src: "img/placeholder.png"
+toc: true
 ---
 
 <!--more-->
