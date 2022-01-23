@@ -3,7 +3,7 @@ date: 2021-04-02T23:06:07+08:00
 title: "Buildpack Tips and Tricks"
 description: CNCF 下的 buildpack 是定義出轉換程式碼至 image 的標準，使用者可以適擇適合的 builder (Google, HeroKu, Paketo) 來產出 container image，除了免去編輯 Dockerfile 的部份、container image layer 有相同的體驗、container image 的安全性交由 builder 來處理等等好處。不過美好的事情背後也是有一些取捨。本篇文章就是最近優化 CI/CD pipeline 流程上使用 buildpack 的心得分享還有遇到的坑及解決方案
 tags:
-  - buildpack
+  - buildpacks
   - gcp
   - pack
   - heroku

@@ -4,7 +4,7 @@ title: "Build Your Buildpack"
 draft: false
 description: 在 Buildpack Tips and Tricks 上一篤文章中我們提到了 Cloud Native Buildpacks 專案發起的目的還有一些使用上的心得，一般的使用情境就是選擇適合的 builder (Google, Heroku, Paketo)，必要時可以指定額外的 buildpack 。本篇文章稍後也會介紹 buildpack 基本組成元件、如何編寫自己的 buildpack 及發佈至 buildpack registry
 tags:
-  - buildpack
+  - buildpacks
   - gcp
   - pack
   - heroku

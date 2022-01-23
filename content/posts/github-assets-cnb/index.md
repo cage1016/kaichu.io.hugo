@@ -4,7 +4,7 @@ title: "Github Assets Cnb"
 draft: false
 description: 在構建 container image 時，有時候會有需求動態下載 Github repo 中的 Assets 檔案，簡單的方式就是在 `dockerfile` 透過 `curl` 指令來獲取檔案，本篇文章則透過 paketo-buildpacks/packit 來實作一個可以下載 Github Assets 的 buildpack cage1016/github-assets-cnb
 tags:
-  - buildpack
+  - buildpacks
   - gcp
   - pack
   - github

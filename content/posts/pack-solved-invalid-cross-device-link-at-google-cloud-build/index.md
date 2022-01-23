@@ -6,7 +6,7 @@ description: Pack 0.19.0 終於發佈了，這一個版本包含了解決在 Goo
 tags:
   - pack
   - cloudbuild
-  - buildpack
+  - buildpacks
 resources:
   - name: "featured-image"
     src: "img/error.png"
