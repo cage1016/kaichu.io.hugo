@@ -123,7 +123,7 @@ enableEmoji = true
         # whether to use the absolute URL based on the baseURL in search index
         absoluteURL = false
         [languages.en.params.search.algolia]
-          index = "index"
+          index = "index.en"
           appID = "IB21BAKK19"
           searchKey = "8883d25f4767d3d2848450e3afa6cf05"
       # Home page config
@@ -218,6 +218,202 @@ enableEmoji = true
         Email = "cage.chung@gmail.com"
         RSS = true
         # [languages.en.params.social.Mastodon]
+        #   id = "@xxxx"
+        #   prefix = "https://mastodon.technology/"
+  [languages.zh-tw]
+    weight = 2
+    # language code
+    languageCode = "zh-TW"
+    # language name
+    languageName = "繁體中文"
+    # whether to include Chinese/Japanese/Korean
+    hasCJKLanguage = true
+    # default amount of posts in each pages
+    paginate = 12
+    # [UA-XXXXXXXX-X] google analytics code
+    googleAnalytics = "UA-65308340-1"
+    # copyright description used only for seo schema
+    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    # Menu config
+    [languages.zh-tw.menu]
+      [[languages.zh-tw.menu.main]]
+        identifier = "home"
+        # you can add extra information before the name (HTML format is supported), such as icons
+        pre = ""
+        # you can add extra information after the name (HTML format is supported), such as icons
+        post = ""
+        name = "首頁"
+        url = ""
+        # title will be shown when you hover on this menu link.
+        title = "首頁"
+        weight = 1
+      [[languages.zh-tw.menu.main]]
+        identifier = "posts"
+        # you can add extra information before the name (HTML format is supported), such as icons
+        pre = ""
+        # you can add extra information after the name (HTML format is supported), such as icons
+        post = ""
+        name = "所有文章"
+        url = "/posts/"
+        # title will be shown when you hover on this menu link.
+        title = ""
+        weight = 2
+      [[languages.zh-tw.menu.main]]
+        identifier = "tags"
+        pre = ""
+        post = ""
+        name = "標籤"
+        url = "/tags/"
+        title = ""
+        weight = 3
+      [[languages.zh-tw.menu.main]]
+        identifier = "about"
+        pre = ""
+        post = ""
+        name = "關於"
+        url = "/about/"
+        title = ""
+        weight = 4
+      # [[languages.zh-tw.menu.main]]
+      #   identifier = "github"
+      #   pre = "<i class='fab fa-github fa-fw'></i>"
+      #   post = ""
+      #   name = ""
+      #   url = "https://github.com/cage1016"
+      #   title = "GitHub"
+      #   weight = 4
+    [languages.zh-tw.params]
+      # site description
+      description = "Life is unique by how you shape it"
+      # site keywords
+      keywords = ["Theme", "Hugo"]
+      # App icon config
+      [languages.zh-tw.params.app]
+        # optional site title override for the app when added to an iOS home screen or Android launcher
+        title = "KaiChu"
+        # whether to omit favicon resource links
+        noFavicon = false
+        # modern SVG favicon to use in place of older style .png and .ico files
+        svgFavicon = ""
+        # Android browser theme color
+        themeColor = "#ffffff"
+        # Safari mask icon color
+        iconColor = "#5bbad5"
+        # Windows v8-10 tile color
+        tileColor = "#da532c"
+      # Search config
+      [languages.zh-tw.params.search]
+        enable = true
+        # type of search engine ("lunr", "algolia")
+        type = "algolia"
+        # max index length of the chunked content
+        contentLength = 4000
+        # placeholder of the search bar
+        placeholder = ""
+        # max number of results length
+        maxResultLength = 10
+        # snippet length of the result
+        snippetLength = 30
+        # HTML tag name of the highlight part in results
+        highlightTag = "em"
+        # whether to use the absolute URL based on the baseURL in search index
+        absoluteURL = false
+        [languages.zh-tw.params.search.algolia]
+          index = "index.zh-tw"
+          appID = "IB21BAKK19"
+          searchKey = "8883d25f4767d3d2848450e3afa6cf05"
+      # Home page config
+      [languages.zh-tw.params.home]
+        # amount of RSS pages
+        rss = 10
+        # Home page profile
+        [languages.zh-tw.params.home.profile]
+          enable = true
+          # Gravatar Email for preferred avatar in home page
+          gravatarEmail = ""
+          # URL of avatar shown in home page
+          avatarURL = "/logo.png"
+          # title shown in home page (HTML format is supported)
+          title = ""
+          # subtitle shown in home page
+          subtitle = "Life is unique by how you shape it"
+          # whether to use typeit animation for subtitle
+          typeit = true
+          # whether to show social links
+          social = true
+          # disclaimer (HTML format is supported)
+          disclaimer = ""
+        # Home page posts
+        [languages.zh-tw.params.home.posts]
+          enable = true
+          # special amount of posts in each home posts page
+          paginate = 6
+      # Social config in home page
+      [languages.zh-tw.params.social]
+        GitHub = "cage1016"
+        Linkedin = "kaichuchung"
+        Twitter = "CageChung"
+        Instagram = "cage1016"
+        Facebook = ""
+        Telegram = ""
+        Medium = ""
+        Gitlab = ""
+        Youtubelegacy = ""
+        Youtubecustom = ""
+        Youtubechannel = ""
+        Tumblr = ""
+        Quora = ""
+        Keybase = ""
+        Pinterest = ""
+        Reddit = ""
+        Codepen = ""
+        FreeCodeCamp = ""
+        Bitbucket = ""
+        Stackoverflow = ""
+        Weibo = ""
+        Odnoklassniki = ""
+        VK = ""
+        Flickr = ""
+        Xing = ""
+        Snapchat = ""
+        Soundcloud = ""
+        Spotify = ""
+        Bandcamp = ""
+        Paypal = ""
+        Fivehundredpx = ""
+        Mix = ""
+        Goodreads = ""
+        Lastfm = ""
+        Foursquare = ""
+        Hackernews = ""
+        Kickstarter = ""
+        Patreon = ""
+        Steam = ""
+        Twitch = ""
+        Strava = ""
+        Skype = ""
+        Whatsapp = ""
+        Zhihu = ""
+        Douban = ""
+        Angellist = ""
+        SlideShare = "cagechung"
+        Jsfiddle = ""
+        Deviantart = ""
+        Behance = ""
+        Dribbble = ""
+        Wordpress = ""
+        Vine = ""
+        Googlescholar = ""
+        Researchgate = ""
+        Thingiverse = ""
+        Devto = ""
+        Gitea = ""
+        XMPP = ""
+        Matrix = ""
+        Bilibili = ""
+        Email = "cage.chung@gmail.com"
+        RSS = true
+        # [languages.zh-tw.params.social.Mastodon]
         #   id = "@xxxx"
         #   prefix = "https://mastodon.technology/"
 [params]
