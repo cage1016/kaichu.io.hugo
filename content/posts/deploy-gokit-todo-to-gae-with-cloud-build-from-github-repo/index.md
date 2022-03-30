@@ -1,6 +1,6 @@
 ---
 date: 2022-03-27T07:16:36Z
-title: "Deploy Gokit Todo to Gae With Cloud Build From Github Repo"
+title: "Deploy Gokit Todo to GAE With Cloud Build From Github Repo"
 draft: false
 description: gokit-todo, gokit-todo-frontend are applications developed with low dependencies on code suites and simple tasks on Kubernetes. We can easily migrate to Google App Engine for CI/CD development process using Google Cloud Build and Github repo.
 tags:
