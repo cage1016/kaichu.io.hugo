@@ -28,7 +28,8 @@
 		"bungcip.better-toml",
 		"davidanson.vscode-markdownlint",
 		"wmaurer.change-case",
-		"dbankier.vscode-quick-select"
+		"dbankier.vscode-quick-select",
+		"GitHub.copilot"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
