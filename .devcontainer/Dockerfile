@@ -31,3 +31,4 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # RUN sudo -u node npm install -g <your-package-list-here>
 
 RUN curl -LO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.0/diff-so-fancy && chmod +x diff-so-fancy && sudo mv diff-so-fancy /usr/bin/
+RUN curl -fsSL https://d2lang.com/install.sh | sh -s --

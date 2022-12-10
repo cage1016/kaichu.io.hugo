@@ -40,6 +40,12 @@
             },
             "problemMatcher": [],
         },
+        {
+            "label": "d2 watch",
+            "type": "shell",
+            "command": "d2 -w \"${input:d2filepick}\" \"${input:d2filepick}\".svg",
+            "problemMatcher": []
+        },
     ],
     "inputs": [
         {
@@ -48,5 +54,19 @@
             "description": "Name your post title.",
             "default": "my-new-post-title"
         },
+        {
+            "id": "d2filepick",
+            "type": "command",
+            "command": "filePicker.pickCommand",
+            "args": {
+                "masks": "**/*.d2",
+                "display": "filePath",
+                "output": "filePath",
+                "command": {
+                    "command": "echo ${file} | tr -d '\n'",
+                    "cwd": ".",
+                }
+            }
+        }
     ],
 }

@@ -29,7 +29,11 @@
 		"davidanson.vscode-markdownlint",
 		"wmaurer.change-case",
 		"dbankier.vscode-quick-select",
-		"GitHub.copilot"
+		"GitHub.copilot",
+		"yzhang.markdown-all-in-one",
+		"adpyke.codesnap",
+		"dfarley1.file-picker",
+		"patbenatar.advanced-new-file"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
