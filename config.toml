@@ -59,13 +59,24 @@ enableEmoji = true
         title = ""
         weight = 2
       [[languages.en.menu.main]]
+        identifier = "alfred"
+        # you can add extra information before the name (HTML format is supported), such as icons
+        pre = ""
+        # you can add extra information after the name (HTML format is supported), such as icons
+        post = ""
+        name = "Alfred"
+        url = "/tags/alfred"
+        # title will be shown when you hover on this menu link.
+        title = ""
+        weight = 3
+      [[languages.en.menu.main]]
         identifier = "tags"
         pre = ""
         post = ""
         name = "Tags"
         url = "/tags/"
         title = ""
-        weight = 3
+        weight = 4
       [[languages.en.menu.main]]
         identifier = "about"
         pre = ""
@@ -73,7 +84,7 @@ enableEmoji = true
         name = "About"
         url = "/about/"
         title = ""
-        weight = 4
+        weight = 5
       # [[languages.en.menu.main]]
       #   identifier = "github"
       #   pre = "<i class='fab fa-github fa-fw'></i>"
@@ -251,13 +262,24 @@ enableEmoji = true
         title = ""
         weight = 2
       [[languages.zh-tw.menu.main]]
+        identifier = "alfred"
+        # you can add extra information before the name (HTML format is supported), such as icons
+        pre = ""
+        # you can add extra information after the name (HTML format is supported), such as icons
+        post = ""
+        name = "Alfred"
+        url = "/tags/alfred"
+        # title will be shown when you hover on this menu link.
+        title = ""
+        weight = 3        
+      [[languages.zh-tw.menu.main]]
         identifier = "tags"
         pre = ""
         post = ""
         name = "標籤"
         url = "/tags/"
         title = ""
-        weight = 3
+        weight = 4
       [[languages.zh-tw.menu.main]]
         identifier = "about"
         pre = ""
@@ -265,7 +287,7 @@ enableEmoji = true
         name = "關於"
         url = "/about/"
         title = ""
-        weight = 4
+        weight = 5
       # [[languages.zh-tw.menu.main]]
       #   identifier = "github"
       #   pre = "<i class='fab fa-github fa-fw'></i>"
